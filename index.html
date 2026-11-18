@@ -95,6 +95,9 @@ p{margin:0}
 /* work grid */
 .section-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;padding-block:2rem 1.25rem}
 .section-head h2{font-size:var(--step-2)}
+.group-head{padding-block:.5rem 1.25rem;border-top:1px solid var(--rule);margin-top:.5rem}
+.group-head h3{font-size:var(--step-1);margin:1.25rem 0 0}
+.group-head p{margin:.35rem 0 0;color:var(--muted);max-width:var(--col)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,21rem),1fr));gap:2.25rem 2rem;padding-bottom:3rem}
 .card{display:grid;gap:.85rem;text-decoration:none;color:inherit}
 .card .thumb{aspect-ratio:16/10;overflow:hidden;border-radius:6px;border:1px solid var(--rule);background:var(--surface);max-width:100%}
@@ -186,12 +189,24 @@ a.term{text-decoration-style:dotted;text-decoration-thickness:1px}
   function slugify(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
 
   function home(){
-    var cards = S.map(function(c){
+    var card = function(c){
       return '<a class="card" href="#'+c.slug+'">'+
         '<div class="thumb"><img src="'+c.cover+'" alt="" loading="lazy"></div>'+
         '<ul class="tags">'+c.methods.map(function(m){return '<li>'+esc(m)+'</li>';}).join('')+'</ul>'+
-        '<h3>'+esc(c.title)+'</h3><p>'+esc(c.card)+'</p><span class="when">'+esc(c.when)+'</span></a>';
+        '<h3>'+c.title+'</h3><p>'+esc(c.card)+'</p>'+(c.when?'<span class="when">'+esc(c.when)+'</span>':'')+'</a>';
+    };
+    var bySlug = {}; S.forEach(function(c){ bySlug[c.slug] = c; });
+    var pw = MORE.filter(function(m){ return m.slug==='work-pichhwai'; })[0];
+    if(pw) bySlug['work-pichhwai'] = {slug:pw.slug, cover:pw.pics[0].src, title:pw.title, card:pw.card, methods:['Visual communication','Folk art','Official adoption']};
+    var used = {};
+    var cards = GROUPS.map(function(g){
+      var items = g.s.filter(function(x){ return bySlug[x]; });
+      items.forEach(function(x){ used[x] = 1; });
+      return '<div class="group-head"><h3>'+esc(g.t)+'</h3>'+(g.note?'<p>'+esc(g.note)+'</p>':'')+'</div>'+
+        '<div class="grid">'+items.map(function(x){ return card(bySlug[x]); }).join('')+'</div>';
     }).join('');
+    var rest = S.filter(function(c){ return !used[c.slug]; });
+    if(rest.length) cards += '<div class="grid">'+rest.map(card).join('')+'</div>';
     return ''+
     '<section class="hero"><div class="hero-text">'+
       '<p class="eyebrow">UX research · public services · rural India</p>'+
@@ -205,13 +220,19 @@ a.term{text-decoration-style:dotted;text-decoration-thickness:1px}
       '</dl>'+
     '</div><figure class="hero-photo"><img src="img/field-hero.jpg" width="1400" height="1050" alt="Mayank sits on a plastic chair with a notebook, interviewing a woman seated on a charpai in her courtyard"><figcaption>Interviewing a mother in her courtyard during a monitoring visit in Salarpur</figcaption></figure>'+
     '</section>'+
-    '<div class="section-head"><h2>Case studies</h2><span class="eyebrow">'+S.length+' projects</span></div>'+
-    '<div class="grid">'+cards+'</div>'+
+    '<div class="section-head"><h2>Case studies</h2><span class="eyebrow">'+(S.length+(pw?1:0))+' projects</span></div>'+
+    cards+
     more()+
     press()+
     about();
   }
 
+  var GROUPS = [
+    {t:'Health: research and design', s:['kpi','madhubani','anaemia']},
+    {t:'Health: mapping the data', note:'Three diseases, one method, and a different question each time: where is it, what is linked to it, and what is causing it.', s:['tb','diarrhoea','malaria']},
+    {t:'Animal health and welfare', s:['gaushala','work-pichhwai']},
+    {t:'Livelihoods', s:['shg','candles']}
+  ];
   var MORE = [
     {slug:'pichhwai', card:'A four-panel folk-art poster on deworming and vaccinating cattle, printed for the block veterinary hospital.'},
     {slug:'inclusion', card:'Reaching a transgender household in Binawar through a trusted ASHA worker, then surveying their needs and turning the gaps into a department-wise action report.'},
@@ -246,7 +267,7 @@ a.term{text-decoration-style:dotted;text-decoration-thickness:1px}
 
   function more(){
     return '<div class="section-head"><h2>More field work</h2><span class="eyebrow">Smaller projects</span></div><div class="grid">'+
-      MORE.map(function(m){
+      MORE.filter(function(m){ return m.slug!=='work-pichhwai'; }).map(function(m){
         return '<a class="card" href="#'+m.slug+'"><div class="thumb"><img src="'+m.pics[0].src+'" alt="" loading="lazy"></div>'+
           '<h3>'+m.title+'</h3><p>'+esc(m.card)+'</p></a>';
       }).join('')+'</div>';

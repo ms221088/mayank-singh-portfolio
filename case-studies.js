@@ -1644,6 +1644,205 @@ window.CASE_STUDIES = [
   ]
  },
  {
+  "slug": "gaushala",
+  "title": "A QR Code for the Cow Shelter Fund",
+  "fullTitle": "A QR Code for the Cow Shelter Fund: How a Small Change in How People Pay Increased Donations",
+  "subtitle": "Removing a payment barrier for donations to Budaun's cattle-protection fund",
+  "card": "The district's cow shelter fund held very little money because the only way to give was a bank transfer. I pushed for a UPI QR code; donations passed ₹1 lakh within months and are now roughly ₹8–9 lakh.",
+  "methods": [
+   "Service design",
+   "Removing friction",
+   "Navigating government"
+  ],
+  "when": "Jul 2023 – ongoing",
+  "cover": "img/gaushala-2.jpg",
+  "live": null,
+  "sections": [
+   {
+    "title": "Quick Summary",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "Budaun has a district fund for cow shelters (gaushalas), the Gau Sanrakshan evam Samvardhan Nidhi, held at Punjab National Bank. In 2023 it held very little money. When I tried to donate, I found the only way was a bank transfer: I had to add the fund as a beneficiary in my internet banking. I raised ₹5,000 by giving one of my paintings to a forest officer from Madhya Pradesh, then suggested that the fund accept UPI, India's scan-and-pay mobile payment system. Working through the block Veterinary Officer, the animal husbandry department and the Chief Development Officer, the bank issued a UPI QR code within two weeks. Donations passed ₹1 lakh by February 2024 and are now roughly ₹8–9 lakh in total, most of them paid through UPI."
+     },
+     {
+      "k": "p",
+      "html": "Method: noticing the problem as a donor myself; mapping who could change it; proposing and following up the change through the departments; promoting it through media and WhatsApp."
+     },
+     {
+      "k": "img",
+      "src": "img/gaushala-1.jpg",
+      "cap": "The fund's UPI QR code, issued by Punjab National Bank's Vikas Bhawan branch",
+      "w": 974,
+      "h": 1280
+     }
+    ]
+   },
+   {
+    "title": "End Users — Goals, Needs, Details",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "ul",
+      "items": [
+       "Donors (villagers, officials, people from outside the district) — want to give small amounts quickly from their phone, without bank details or paperwork.",
+       "The animal husbandry department and cow shelters — need funds to feed and care for stray cattle.",
+       "The district administration (DM and CDO) — decides how the fund is spent.",
+       "Road users and the stray cattle themselves — affected by how the money is used, for example on road safety."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Methodology",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "I came to the problem as a donor. I was told the fund had received hardly any donations, and wanted to help. I painted a watercolour on the theme of turtle conservation and gave it to a Divisional Forest Officer from Madhya Pradesh, who gave ₹5,000 for the fund. To pay it in, in July 2023, I had to add the fund's account as a beneficiary through my own internet banking. That step showed me why the fund was nearly empty: most people won't go through it for a small gift."
+     },
+     {
+      "k": "img",
+      "src": "img/gaushala-2.jpg",
+      "cap": "My turtle-conservation watercolour, given in return for the first ₹5,000 donation",
+      "w": 1024,
+      "h": 768
+     },
+     {
+      "k": "p",
+      "html": "I took the idea of a UPI QR code to the Veterinary Officer of Salarpur block, who agreed it would make appeals possible and directed me to the responsible clerk in the animal husbandry department. I then met the Chief Development Officer, who asked the clerk at Vikas Bhawan, the district development office, to get a QR code from the Punjab National Bank branch in the same building."
+     }
+    ]
+   },
+   {
+    "title": "Collected Data",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "ul",
+      "items": [
+       "Starting point: very little money in the fund (2023).",
+       "First donation: ₹5,000, paid by bank transfer in July 2023.",
+       "QR code issued within about two weeks of the CDO's instruction.",
+       "More than ₹1 lakh received by February 2024; roughly ₹8–9 lakh received in total by now, mostly through UPI by number of donations (exact figures to be confirmed from the passbook)."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Synthesis",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "People were willing to give; the payment channel was the barrier. A bank transfer needs the account number and IFSC code, adding a beneficiary and sometimes a waiting period, which is too much effort for a ₹100 or ₹500 gift. In India most small payments are now made by scanning a QR code, so the fix was to let donors pay the way they already pay for everything else."
+     }
+    ]
+   },
+   {
+    "title": "Findings",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "ul",
+      "items": [
+       "Removing one step in the payment process changed donations far more than any appeal could have: from very little to over ₹1 lakh within months.",
+       "Most donations by count now come through UPI, which confirms that small donors were the ones being lost.",
+       "The change depended on people, not technology: it went from the Veterinary Officer to a department clerk, the CDO and a bank manager.",
+       "A new bottleneck appeared on the spending side: money can only be withdrawn after a committee meeting, so the District Magistrate had to use special powers to spend some of it."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Solution Space",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "Other options were to keep appealing for bank transfers, to put a cash box in an office, or to use a private crowdfunding website. Cash is hard to account for, and crowdfunding sites charge fees and aren't official. A QR code from the fund's own bank was free, official and traceable, since every payment goes straight into the government account."
+     }
+    ]
+   },
+   {
+    "title": "Outcome",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "The QR code was ready within two weeks, and I promoted it through the media and on WhatsApp. Donations passed ₹1 lakh by February 2024 and have reached roughly ₹8–9 lakh in total. Recently the District Magistrate used special powers to withdraw part of the fund for reflective collars for stray cattle, to help prevent road accidents at night. I still need to check the passbook for the exact amounts."
+     }
+    ]
+   },
+   {
+    "title": "Impact on End Users & Administration",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "Donors can now give any amount in seconds from their phone. The fund went from almost empty to a meaningful sum the district can use for stray cattle, and part of it is already going to road safety."
+     }
+    ]
+   },
+   {
+    "title": "What I Learned",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "ul",
+      "items": [
+       "Service design isn't only screens: here the design change was a payment method.",
+       "Experiencing a process myself, as a donor, showed me the barrier faster than asking others would have.",
+       "A good idea in government moves through people; knowing who can approve what made a two-week change possible.",
+       "Fixing how money comes in exposes how it goes out; the spending rules are now the slower part."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Challenges & How I Overcame Them",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "ul",
+      "items": [
+       "No one owned the problem: I worked out the chain of people who could approve and execute the change, and followed it up in person.",
+       "I have no authority over the fund: I proposed the change through the Veterinary Officer and the CDO rather than trying to do it myself."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "What I Would Do Differently",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "ul",
+      "items": [
+       "Keep a simple record of donations and spending from the start, and share it publicly, so donors can see what their money did.",
+       "Propose clearer rules for spending the fund, so money doesn't wait for a committee meeting or special powers.",
+       "Get exact figures from the passbook regularly instead of relying on estimates."
+      ]
+     }
+    ]
+   }
+  ],
+  "glossary": [
+   "<strong>Gaushala</strong> — a cow shelter; in Uttar Pradesh many house stray cattle that farmers no longer keep. <a href=\"https://en.wikipedia.org/wiki/Gaushala\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>Gau Sanrakshan evam Samvardhan Nidhi</strong> — the district's cow protection and development fund, held in a bank account.",
+   "<strong>UPI (Unified Payments Interface)</strong> — India's instant mobile payment system; people pay by scanning a QR code in apps such as Google Pay, PhonePe or BHIM. <a href=\"https://en.wikipedia.org/wiki/Unified_Payments_Interface\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>PNB (Punjab National Bank)</strong> — the bank that holds the fund's account.",
+   "<strong>VO (Veterinary Officer)</strong> — the government vet in charge of animal health in the block.",
+   "<strong>Vikas Bhawan</strong> — the district development office building in Budaun.",
+   "<strong>DFO (Divisional Forest Officer)</strong> — the officer in charge of a forest division.",
+   "<strong>CDO (Chief Development Officer)</strong> — the senior official in charge of development programmes across the district.",
+   "<strong>DM (District Magistrate)</strong> — the head of the district administration. <a href=\"https://en.wikipedia.org/wiki/District_magistrate_(India\" target=\"_blank\" rel=\"noopener\">Learn more</a>)",
+   "<strong>Lakh</strong> — the Indian unit for 100,000. \"Per lakh\" means per 100,000 people. <a href=\"https://en.wikipedia.org/wiki/Lakh\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>Block (Vikas Khand)</strong> — the administrative level below a district. <a href=\"https://en.wikipedia.org/wiki/Community_development_block_in_India\" target=\"_blank\" rel=\"noopener\">Learn more</a>"
+  ]
+ },
+ {
   "slug": "shg",
   "title": "Budaun SHG Catalogue",
   "fullTitle": "Budaun SHG Catalogue: A Bilingual Directory That Helps District Officials Find and Promote Local Women's Enterprises",
@@ -1876,205 +2075,6 @@ window.CASE_STUDIES = [
    "<strong>ODOP (One District One Product)</strong> — Uttar Pradesh's scheme promoting one traditional product per district; Budaun's is Zari-Zardozi embroidery. <a href=\"https://odopup.in/\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
    "<strong>Zari-Zardozi / Aari</strong> — metallic-thread embroidery / the hooked-needle stitch it is built on. <a href=\"https://en.wikipedia.org/wiki/Zardozi\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
    "<strong>GitHub Pages</strong> — a free service for hosting simple websites. <a href=\"https://pages.github.com/\" target=\"_blank\" rel=\"noopener\">Learn more</a>"
-  ]
- },
- {
-  "slug": "gaushala",
-  "title": "A QR Code for the Cow Shelter Fund",
-  "fullTitle": "A QR Code for the Cow Shelter Fund: How a Small Change in How People Pay Increased Donations",
-  "subtitle": "Removing a payment barrier for donations to Budaun's cattle-protection fund",
-  "card": "The district's cow shelter fund held very little money because the only way to give was a bank transfer. I pushed for a UPI QR code; donations passed ₹1 lakh within months and are now roughly ₹8–9 lakh.",
-  "methods": [
-   "Service design",
-   "Removing friction",
-   "Navigating government"
-  ],
-  "when": "Jul 2023 – ongoing",
-  "cover": "img/gaushala-2.jpg",
-  "live": null,
-  "sections": [
-   {
-    "title": "Quick Summary",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "Budaun has a district fund for cow shelters (gaushalas), the Gau Sanrakshan evam Samvardhan Nidhi, held at Punjab National Bank. In 2023 it held very little money. When I tried to donate, I found the only way was a bank transfer: I had to add the fund as a beneficiary in my internet banking. I raised ₹5,000 by giving one of my paintings to a forest officer from Madhya Pradesh, then suggested that the fund accept UPI, India's scan-and-pay mobile payment system. Working through the block Veterinary Officer, the animal husbandry department and the Chief Development Officer, the bank issued a UPI QR code within two weeks. Donations passed ₹1 lakh by February 2024 and are now roughly ₹8–9 lakh in total, most of them paid through UPI."
-     },
-     {
-      "k": "p",
-      "html": "Method: noticing the problem as a donor myself; mapping who could change it; proposing and following up the change through the departments; promoting it through media and WhatsApp."
-     },
-     {
-      "k": "img",
-      "src": "img/gaushala-1.jpg",
-      "cap": "The fund's UPI QR code, issued by Punjab National Bank's Vikas Bhawan branch",
-      "w": 974,
-      "h": 1280
-     }
-    ]
-   },
-   {
-    "title": "End Users — Goals, Needs, Details",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "ul",
-      "items": [
-       "Donors (villagers, officials, people from outside the district) — want to give small amounts quickly from their phone, without bank details or paperwork.",
-       "The animal husbandry department and cow shelters — need funds to feed and care for stray cattle.",
-       "The district administration (DM and CDO) — decides how the fund is spent.",
-       "Road users and the stray cattle themselves — affected by how the money is used, for example on road safety."
-      ]
-     }
-    ]
-   },
-   {
-    "title": "Methodology",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "I came to the problem as a donor. I was told the fund had received hardly any donations, and wanted to help. I painted a watercolour on the theme of turtle conservation and gave it to a Divisional Forest Officer from Madhya Pradesh, who gave ₹5,000 for the fund. To pay it in, in July 2023, I had to add the fund's account as a beneficiary through my own internet banking. That step showed me why the fund was nearly empty: most people won't go through it for a small gift."
-     },
-     {
-      "k": "img",
-      "src": "img/gaushala-2.jpg",
-      "cap": "My turtle-conservation watercolour, given in return for the first ₹5,000 donation",
-      "w": 1024,
-      "h": 768
-     },
-     {
-      "k": "p",
-      "html": "I took the idea of a UPI QR code to the Veterinary Officer of Salarpur block, who agreed it would make appeals possible and directed me to the responsible clerk in the animal husbandry department. I then met the Chief Development Officer, who asked the clerk at Vikas Bhawan, the district development office, to get a QR code from the Punjab National Bank branch in the same building."
-     }
-    ]
-   },
-   {
-    "title": "Collected Data",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "ul",
-      "items": [
-       "Starting point: very little money in the fund (2023).",
-       "First donation: ₹5,000, paid by bank transfer in July 2023.",
-       "QR code issued within about two weeks of the CDO's instruction.",
-       "More than ₹1 lakh received by February 2024; roughly ₹8–9 lakh received in total by now, mostly through UPI by number of donations (exact figures to be confirmed from the passbook)."
-      ]
-     }
-    ]
-   },
-   {
-    "title": "Synthesis",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "People were willing to give; the payment channel was the barrier. A bank transfer needs the account number and IFSC code, adding a beneficiary and sometimes a waiting period, which is too much effort for a ₹100 or ₹500 gift. In India most small payments are now made by scanning a QR code, so the fix was to let donors pay the way they already pay for everything else."
-     }
-    ]
-   },
-   {
-    "title": "Findings",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "ul",
-      "items": [
-       "Removing one step in the payment process changed donations far more than any appeal could have: from very little to over ₹1 lakh within months.",
-       "Most donations by count now come through UPI, which confirms that small donors were the ones being lost.",
-       "The change depended on people, not technology: it went from the Veterinary Officer to a department clerk, the CDO and a bank manager.",
-       "A new bottleneck appeared on the spending side: money can only be withdrawn after a committee meeting, so the District Magistrate had to use special powers to spend some of it."
-      ]
-     }
-    ]
-   },
-   {
-    "title": "Solution Space",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "Other options were to keep appealing for bank transfers, to put a cash box in an office, or to use a private crowdfunding website. Cash is hard to account for, and crowdfunding sites charge fees and aren't official. A QR code from the fund's own bank was free, official and traceable, since every payment goes straight into the government account."
-     }
-    ]
-   },
-   {
-    "title": "Outcome",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "The QR code was ready within two weeks, and I promoted it through the media and on WhatsApp. Donations passed ₹1 lakh by February 2024 and have reached roughly ₹8–9 lakh in total. Recently the District Magistrate used special powers to withdraw part of the fund for reflective collars for stray cattle, to help prevent road accidents at night. I still need to check the passbook for the exact amounts."
-     }
-    ]
-   },
-   {
-    "title": "Impact on End Users & Administration",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "Donors can now give any amount in seconds from their phone. The fund went from almost empty to a meaningful sum the district can use for stray cattle, and part of it is already going to road safety."
-     }
-    ]
-   },
-   {
-    "title": "What I Learned",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "ul",
-      "items": [
-       "Service design isn't only screens: here the design change was a payment method.",
-       "Experiencing a process myself, as a donor, showed me the barrier faster than asking others would have.",
-       "A good idea in government moves through people; knowing who can approve what made a two-week change possible.",
-       "Fixing how money comes in exposes how it goes out; the spending rules are now the slower part."
-      ]
-     }
-    ]
-   },
-   {
-    "title": "Challenges & How I Overcame Them",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "ul",
-      "items": [
-       "No one owned the problem: I worked out the chain of people who could approve and execute the change, and followed it up in person.",
-       "I have no authority over the fund: I proposed the change through the Veterinary Officer and the CDO rather than trying to do it myself."
-      ]
-     }
-    ]
-   },
-   {
-    "title": "What I Would Do Differently",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "ul",
-      "items": [
-       "Keep a simple record of donations and spending from the start, and share it publicly, so donors can see what their money did.",
-       "Propose clearer rules for spending the fund, so money doesn't wait for a committee meeting or special powers.",
-       "Get exact figures from the passbook regularly instead of relying on estimates."
-      ]
-     }
-    ]
-   }
-  ],
-  "glossary": [
-   "<strong>Gaushala</strong> — a cow shelter; in Uttar Pradesh many house stray cattle that farmers no longer keep. <a href=\"https://en.wikipedia.org/wiki/Gaushala\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>Gau Sanrakshan evam Samvardhan Nidhi</strong> — the district's cow protection and development fund, held in a bank account.",
-   "<strong>UPI (Unified Payments Interface)</strong> — India's instant mobile payment system; people pay by scanning a QR code in apps such as Google Pay, PhonePe or BHIM. <a href=\"https://en.wikipedia.org/wiki/Unified_Payments_Interface\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>PNB (Punjab National Bank)</strong> — the bank that holds the fund's account.",
-   "<strong>VO (Veterinary Officer)</strong> — the government vet in charge of animal health in the block.",
-   "<strong>Vikas Bhawan</strong> — the district development office building in Budaun.",
-   "<strong>DFO (Divisional Forest Officer)</strong> — the officer in charge of a forest division.",
-   "<strong>CDO (Chief Development Officer)</strong> — the senior official in charge of development programmes across the district.",
-   "<strong>DM (District Magistrate)</strong> — the head of the district administration. <a href=\"https://en.wikipedia.org/wiki/District_magistrate_(India\" target=\"_blank\" rel=\"noopener\">Learn more</a>)",
-   "<strong>Lakh</strong> — the Indian unit for 100,000. \"Per lakh\" means per 100,000 people. <a href=\"https://en.wikipedia.org/wiki/Lakh\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>Block (Vikas Khand)</strong> — the administrative level below a district. <a href=\"https://en.wikipedia.org/wiki/Community_development_block_in_India\" target=\"_blank\" rel=\"noopener\">Learn more</a>"
   ]
  },
  {
