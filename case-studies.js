@@ -2,6 +2,325 @@
    To add a new one, append an object with the same fields to this list. */
 window.CASE_STUDIES = [
  {
+  "slug": "kpi",
+  "title": "Salarpur Nigrani Darpan",
+  "fullTitle": "Mapping Focus Areas for Actionable Block-Level Strategy: A Gram Panchayat-Level KPI Monitoring Tool",
+  "subtitle": "A village-council-level monitoring and prioritisation tool for Salarpur Block, Budaun",
+  "card": "A Gram Panchayat-level map of 22 indicators from my own field visits, where opacity shows how many visits sit behind each reading, so thin data is never mistaken for a result.",
+  "methods": [
+   "Information design",
+   "Field investigation",
+   "Data reconciliation"
+  ],
+  "when": "Aug 2023 – present",
+  "cover": "img/kpi-1.jpg",
+  "live": [
+   "Open the live map",
+   "https://ms221088.github.io/Salarpur_KPI_maps/"
+  ],
+  "sections": [
+   {
+    "title": "Quick Summary",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "Salarpur block is tracked on 22 indicators across health, ICDS (Integrated Child Development Services, India's programme for child nutrition and pre-school care) and basic infrastructure. My data comes from random-sample field visits I have recorded on the AB (Aspirational Blocks) Monitoring Portal since August 2023. The goal was to show, for each Gram Panchayat (GP), exactly where to focus limited attention and resources, which no existing health department portal does at GP level. The tool has two views: a GP heat map, where the fill's opacity shows how many visits a reading is based on, so thin data isn't mistaken for a real result; and a ranked table of the most critical GPs, for deciding where to act first. The block's health managers use it to find focus areas, as do the UNICEF team, NGOs visiting families of children who have missed all vaccines, and the officers who run ICDS in the block. It has already led to concrete root-cause findings in the field, and to one decision to drop an unreliable indicator."
+     },
+     {
+      "k": "img",
+      "src": "img/kpi-1.jpg",
+      "cap": "Checking a child’s recorded height at an Anganwadi centre during a monitoring visit",
+      "w": 1600,
+      "h": 2133
+     },
+     {
+      "k": "img",
+      "src": "img/kpi-2.jpg",
+      "cap": "Measuring an infant’s length with the Anganwadi worker, to check measurement accuracy",
+      "w": 1600,
+      "h": 1200
+     },
+     {
+      "k": "p",
+      "html": "Method: I analysed trends per GP in my AB Monitoring Portal field-visit data (August 2023 onward), cross-checked against official Panchayati Raj and health department records, then went to the hotspots the map surfaced to investigate in person. I built the web pages and cleaned the data using Claude, an AI assistant, working on problems and requirements I had identified in my own fieldwork."
+     },
+     {
+      "k": "p",
+      "html": "<a href=\"https://ms221088.github.io/Salarpur_KPI_maps/\" target=\"_blank\" rel=\"noopener\">View the live map: ms221088.github.io/Salarpur_KPI_maps</a>"
+     },
+     {
+      "k": "img",
+      "src": "img/kpi-3.jpg",
+      "cap": "",
+      "w": 1427,
+      "h": 1071
+     }
+    ]
+   },
+   {
+    "title": "End Users — Goals, Needs, Details",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "ul",
+      "items": [
+       "BCPM (Block Community Process Manager), BPM (Block Programme Manager) and MOIC (Medical Officer In-Charge, the doctor heading the block's health services) — need to see quickly which of 77 GPs need attention on which of 22 indicators.",
+       "UNICEF field team — needs a shared, credible view of the block's health and nutrition gaps for its own reviews.",
+       "NGOs visiting families of zero-dose children (children who have missed all routine vaccines) — need to know which villages to prioritise for counselling visits.",
+       "ICDS Supervisor and CDPO (Child Development Project Officer, head of ICDS in the block) — need GP-level visibility of ICDS indicators: nutrition, growth measurement and the facilities at Anganwadi Centres (AWCs), the village centres for child nutrition and pre-school care.",
+       "Me — the main user, for my own field monitoring, analysis and reporting."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Methodology",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "My data comes from random-sample field visits, recorded on the AB Monitoring Portal since August 2023. It is a sample, not a census, so the number of visits varies across GPs and indicators. Building the map meant reconciling two structures that don't match: GP and hamlet boundaries (from Panchayati Raj and health department records), and the health department's reporting units, where each GP is served by one or more ASHAs (village health workers) depending on population. An ASHA's area doesn't line up neatly with GP boundaries. GP names were also spelled differently, and sometimes written in different languages, in the map and in the monitoring data; I reconciled them while cleaning the data, using Claude."
+     }
+    ]
+   },
+   {
+    "title": "Collected Data",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "ul",
+      "items": [
+       "22 indicators across three themes: health and nutrition, ICDS, and basic infrastructure (including sub-indicators for antenatal check-ups).",
+       "All 77 Gram Panchayats of Salarpur block.",
+       "Visits per GP, used as the confidence signal behind each reading.",
+       "Data from August 2023 to the present, viewable as an all-time figure or by quarter."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Synthesis",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "I built two views from the same data, for two ways of using it:"
+     },
+     {
+      "k": "ul",
+      "items": [
+       "A GP heat map, where colour shows the indicator's rate and opacity shows the number of visits, so a strong reading built on very few visits looks different from the same reading built on many. I had raised the concern that a 100% reading from a barely-visited GP needed checking, not celebrating. Claude suggested showing confidence as opacity; I judged that it solved the actual problem and directed the implementation from there.",
+       "A ranked table listing the most critical GPs first. A heat map is good for a visual scan, but a prioritised list is what you need to decide where to act first."
+      ]
+     },
+     {
+      "k": "p",
+      "html": "The map uses quarterly weighted averages rather than raw monthly figures, matching how planning reviews actually use the data."
+     },
+     {
+      "k": "img",
+      "src": "img/kpi-4.jpg",
+      "cap": "Same rate, different visit counts — opacity shows which reading to trust",
+      "w": 707,
+      "h": 463
+     },
+     {
+      "k": "img",
+      "src": "img/kpi-5.jpg",
+      "cap": "Priority list tab — GPs ranked most-critical first (KPI 1.1, all-time). Beneficiary-level columns hidden for privacy.",
+      "w": 1600,
+      "h": 1461
+     }
+    ]
+   },
+   {
+    "title": "Findings",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "ul",
+      "items": [
+       "Urine tests at antenatal check-ups: the map flagged Sikrodi village as a low-completion hotspot. When I investigated, I found the cause: check-ups there happen at the ASHA's home, and pregnant women aren't allowed to use her toilet, so no urine sample can be collected on the spot."
+      ]
+     },
+     {
+      "k": "img",
+      "src": "img/kpi-6.jpg",
+      "cap": "Sikrodi on KPI 1.15(b) urine test, Q2 2026 — urine test done in 2 of 5 monitored ANC cases (40%)",
+      "w": 1008,
+      "h": 1010
+     },
+     {
+      "k": "ul",
+      "items": [
+       "Institutional delivery (births in a hospital or health centre rather than at home): hotspots of home births traced back to villages with especially active, trusted dais (traditional birth attendants). That's a trust and behaviour factor the numbers alone would never have shown."
+      ]
+     },
+     {
+      "k": "img",
+      "src": "img/kpi-7.jpg",
+      "cap": "KPI 1.2 institutional delivery, all-time — red and brown GPs mark the home-delivery hotspots",
+      "w": 1600,
+      "h": 1190
+     },
+     {
+      "k": "ul",
+      "items": [
+       "Data integrity: the ODF+ indicator (villages that are free of open defecation and keep up sanitation) relied on a self-reported list of families without toilets. I cross-checked it with the Panchayati Raj department through the CDO (Chief Development Officer, the senior development official in the district), Budaun. Of 60 listed families, only 29 were actually still eligible; the rest had already received toilets."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Solution Space",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "I built the map as an SVG in Inkscape, not because that's the standard GIS approach, but because SVG was a format I already knew and could map data onto directly. I had no GIS background, so I learned to trace GP and hamlet boundaries from YouTube tutorials instead of adopting dedicated GIS software. I kept both the heat map and the ranked table rather than choosing one, because they serve different moments: the map for spotting spatial patterns, the table for deciding what to do first."
+     }
+    ]
+   },
+   {
+    "title": "Outcome",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "The map is in active use by the BCPM, BPM, MOIC, the UNICEF team, the ICDS Supervisor and CDPO, and NGOs working with zero-dose children, each to target their own focus areas. It has led to field investigations that uncovered specific, non-obvious root causes (Sikrodi, and the dais), and to one data correction: I removed the ODF+ indicator after checking showed its underlying data was largely unreliable."
+     }
+    ]
+   },
+   {
+    "title": "Before and After: Measuring Change",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "A District Development Officer asked whether the map could show before and after. A quarter-by-quarter comparison would mostly show noise, because most GPs get only one to four visits a quarter. So I used <em>rounds</em> instead: a round ends when at least 95% of the block's GPs have been visited. Round 1 ran from Aug 2023 to Dec 2024 (74 of 77 GPs), round 2 from Jan 2025 to Sep 2026 (75 of 77)."
+     },
+     {
+      "k": "img",
+      "src": "img/kpi-8.jpg",
+      "cap": "Indicator 1.1 (first-trimester ANC registration), round 1 vs round 2, on the same colour scale. Faint colour means few visits."
+     },
+     {
+      "k": "p",
+      "html": "The new tab shows the two maps side by side, a change map that colours a GP only where both rounds have at least three people (the rest are marked as not enough data), a block-level graph of every indicator with its numerator and denominator, and an Excel export. Improvements at block level between the two rounds:"
+     },
+     {
+      "k": "ul",
+      "items": [
+       "Iron-folic acid tablets during ANC (my own proxy indicator): 68.8% → 97.1% (+28.3 percentage points)",
+       "At least 4 ANC check-ups: 58.9% → 77.6% (+18.6)",
+       "Working household tap connections: 4.2% → 22.9% (+18.7)",
+       "Diabetes screening: 14.0% → 29.0% (+15.1); monitored only from 2024, so round 1 covers fewer GPs",
+       "First-trimester ANC registration: 34.7% → 44.8% (+10.1)",
+       "Supplementary nutrition for children aged 6 months to 6 years: 59.4% → 69.4% (+10.0)"
+      ]
+     },
+     {
+      "k": "img",
+      "src": "img/kpi-9.jpg",
+      "cap": "Every indicator at block level: hollow dot = round 1, filled dot = round 2. Falls are shown as openly as gains."
+     },
+     {
+      "k": "p",
+      "html": "Building it forced two honesty checks. Supplementary nutrition for pregnant women seemed to fall sharply, but the drop was a single step in April 2024, when I had changed the question from &ldquo;got enough&rdquo; to &ldquo;got it at least four times&rdquo;. I now leave the earlier quarters out of every comparison. A dip in Jul&ndash;Dec 2025 lined up with the start of the Face Recognition System for take-home ration, so I marked that date on the trend charts instead of letting it read as a failure of the programme."
+     },
+     {
+      "k": "p",
+      "html": "I also removed beneficiary names from the public site. The priority list now shows each village once, with its gaps and the number of people, and merges the many spellings of the same village (301 spellings became 181). Names stay with the departments that need them for follow-up."
+     }
+    ]
+   },
+   {
+    "title": "Impact on End Users & Administration",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "Different departments and organisations now share one GP-level reference for where to focus, instead of each working from raw, unranked data or none at all. Some official systems do map at village level, for example the Jal Jeevan Mission's tap-coverage dashboards, but none I use brings the block's UP ABP+ indicators together at GP level, built from verified field visits and with a visible cue for how reliable each reading is. That is the gap this tool fills: the level where root causes like Sikrodi's become visible and actionable."
+     }
+    ]
+   },
+   {
+    "title": "What I Learned",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "ul",
+      "items": [
+       "A strong-looking number built on thin data is a signal to check, not a result to trust. That idea shaped the whole confidence encoding.",
+       "Self-reported data needs independent checking before it's shown as fact. The ODF+ case (60 listed, 29 eligible) showed how far off it can be.",
+       "Administrative and departmental boundaries don't automatically line up (GP boundaries versus ASHA areas). Reconciling them is groundwork, not a side detail."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Challenges & How I Overcame Them",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "ul",
+      "items": [
+       "No GIS background: I taught myself to trace boundaries in Inkscape from YouTube tutorials, and chose SVG because I could already work with it and map data onto it directly.",
+       "GP and hamlet boundaries didn't match the health department's ASHA-based reporting units: I reconciled them through careful data mapping.",
+       "GP names were spelled differently, or written in different languages, in the map and the monitoring data: I cleaned and matched them using Claude.",
+       "Boundary and naming errors in the base map: I corrected them over many rounds (up to version 20) by cross-checking village, hamlet and sub-village lists I got directly from the Panchayati Raj and health departments."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "What I Would Do Differently",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "I'd keep the same tool choice; SVG in Inkscape is still the right fit because it maps so directly to data. Two additions I had planned are now live: a Monitoring trends tab with each indicator's quarterly trend, and a Before vs after tab (above). Next, I would agree the questions and definitions with departments before monitoring starts, so that no indicator needs to be cut from a comparison later."
+     }
+    ]
+   }
+  ],
+  "glossary": [
+   "<strong>Gram Panchayat (GP)</strong> — an elected village council, the smallest unit of local government. Salarpur block has 77. <a href=\"https://en.wikipedia.org/wiki/Gram_panchayat\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>Block (Vikas Khand)</strong> — the administrative level below a district. <a href=\"https://en.wikipedia.org/wiki/Community_development_block_in_India\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>Hamlet (majra)</strong> — a small settlement that belongs to a larger village or Gram Panchayat.",
+   "<strong>UP ABP+ (Uttar Pradesh Aspirational Blocks Programme)</strong> — the state programme, run by the Planning Department, that tracks 108 lagging blocks on 50 development indicators. <a href=\"https://epariyojana.up.gov.in/TABP/OrderGOs.aspx\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>AB Monitoring Portal</strong> — the Planning Department's portal where CM Fellows record their random-sample monitoring visits in aspirational blocks.",
+   "<strong>KPI</strong> — key performance indicator; here, one of the 22 indicators I monitor (for example, the share of pregnant women who register for ANC in the first trimester).",
+   "<strong>ICDS (Integrated Child Development Services)</strong> — India's programme for child nutrition, health and pre-school care, delivered through Anganwadi Centres. <a href=\"https://en.wikipedia.org/wiki/Integrated_Child_Development_Services\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>Anganwadi Centre (AWC)</strong> — the village centre for child nutrition and pre-school care, run by an Anganwadi worker. <a href=\"https://en.wikipedia.org/wiki/Anganwadi\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>ASHA (Accredited Social Health Activist)</strong> — a village woman trained and paid as the community's link to the health system; one per 1,000 people or so. <a href=\"https://en.wikipedia.org/wiki/Accredited_Social_Health_Activist\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>ANC (antenatal care)</strong> — health check-ups during pregnancy. <a href=\"https://en.wikipedia.org/wiki/Prenatal_care\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>BCPM (Block Community Process Manager)</strong> — oversees the block's ASHAs and community health activities.",
+   "<strong>BPM (Block Programme Manager)</strong> — manages the block's National Health Mission programmes and data. <a href=\"https://en.wikipedia.org/wiki/National_Health_Mission\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>MOIC (Medical Officer In-Charge)</strong> — the doctor who heads the block's government health services.",
+   "<strong>CDPO (Child Development Project Officer)</strong> — the officer who heads ICDS in the block.",
+   "<strong>ICDS Supervisor</strong> — supervises a group of Anganwadi Centres.",
+   "<strong>CDO (Chief Development Officer)</strong> — the senior official in charge of development programmes across the district.",
+   "<strong>Panchayati Raj department</strong> — the state department responsible for Gram Panchayats and village local government. <a href=\"https://en.wikipedia.org/wiki/Panchayati_raj_in_India\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>ODF+</strong> — a village status meaning it is free of open defecation and maintains sanitation; it depends on every household having a toilet. <a href=\"https://en.wikipedia.org/wiki/Swachh_Bharat_Mission\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>Zero-dose children</strong> — children who have not received any routine vaccines.",
+   "<strong>Institutional delivery</strong> — a birth in a hospital or health centre rather than at home.",
+   "<strong>Dai</strong> — a traditional birth attendant, usually an older woman in the village with no formal training. <a href=\"https://en.wikipedia.org/wiki/Traditional_birth_attendant\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>Poshan Tracker</strong> — the national app Anganwadi workers use to record child nutrition data. <a href=\"https://poshantracker.in/\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>SVG (Scalable Vector Graphics)</strong> — an image format made of shapes that code can colour individually, which is how each GP on my maps is filled with data. <a href=\"https://en.wikipedia.org/wiki/SVG\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>Inkscape</strong> — free, open-source drawing software; I used it to trace GP and hamlet boundaries. <a href=\"https://inkscape.org/\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>GIS (Geographic Information System)</strong> — specialist mapping software, such as QGIS or ArcGIS, normally used for maps like these. <a href=\"https://en.wikipedia.org/wiki/Geographic_information_system\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>Choropleth map</strong> — a map where areas are shaded by a value, here each GP by its rate. <a href=\"https://en.wikipedia.org/wiki/Choropleth_map\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>Round</strong> — one pass of monitoring visits that covers at least 95% of the block's Gram Panchayats.",
+   "<strong>Percentage point</strong> — the plain difference between two percentages, e.g. 34.7% to 44.8% is +10.1 percentage points.",
+   "<strong>Proxy indicator</strong> — an extra measure I added to track one part of an official KPI, such as whether iron tablets were given during ANC.",
+   "<strong>FRS (Face Recognition System)</strong> — the Poshan Tracker step, from mid-2025, that matches a beneficiary's face before take-home ration is handed over.",
+   "<strong>Take-home ration (THR)</strong> — packaged supplementary food given by Anganwadi Centres to pregnant and breastfeeding women and young children.",
+   "<strong>FHTC (Functional Household Tap Connection)</strong> — a working piped-water tap at home, under the Jal Jeevan Mission."
+  ]
+ },
+ {
   "slug": "madhubani",
   "title": "Madhubani for Maternal Health",
   "fullTitle": "Madhubani for Maternal Health: Improving Early Antenatal Care Registration Through Folk Art and Multi-Pronged Advocacy",
@@ -634,325 +953,6 @@ window.CASE_STUDIES = [
   ]
  },
  {
-  "slug": "kpi",
-  "title": "Salarpur Nigrani Darpan",
-  "fullTitle": "Mapping Focus Areas for Actionable Block-Level Strategy: A Gram Panchayat-Level KPI Monitoring Tool",
-  "subtitle": "A village-council-level monitoring and prioritisation tool for Salarpur Block, Budaun",
-  "card": "A Gram Panchayat-level map of 22 indicators from my own field visits, where opacity shows how many visits sit behind each reading, so thin data is never mistaken for a result.",
-  "methods": [
-   "Information design",
-   "Field investigation",
-   "Data reconciliation"
-  ],
-  "when": "Aug 2023 – present",
-  "cover": "img/kpi-1.jpg",
-  "live": [
-   "Open the live map",
-   "https://ms221088.github.io/Salarpur_KPI_maps/"
-  ],
-  "sections": [
-   {
-    "title": "Quick Summary",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "Salarpur block is tracked on 22 indicators across health, ICDS (Integrated Child Development Services, India's programme for child nutrition and pre-school care) and basic infrastructure. My data comes from random-sample field visits I have recorded on the AB (Aspirational Blocks) Monitoring Portal since August 2023. The goal was to show, for each Gram Panchayat (GP), exactly where to focus limited attention and resources, which no existing health department portal does at GP level. The tool has two views: a GP heat map, where the fill's opacity shows how many visits a reading is based on, so thin data isn't mistaken for a real result; and a ranked table of the most critical GPs, for deciding where to act first. The block's health managers use it to find focus areas, as do the UNICEF team, NGOs visiting families of children who have missed all vaccines, and the officers who run ICDS in the block. It has already led to concrete root-cause findings in the field, and to one decision to drop an unreliable indicator."
-     },
-     {
-      "k": "img",
-      "src": "img/kpi-1.jpg",
-      "cap": "Checking a child’s recorded height at an Anganwadi centre during a monitoring visit",
-      "w": 1600,
-      "h": 2133
-     },
-     {
-      "k": "img",
-      "src": "img/kpi-2.jpg",
-      "cap": "Measuring an infant’s length with the Anganwadi worker, to check measurement accuracy",
-      "w": 1600,
-      "h": 1200
-     },
-     {
-      "k": "p",
-      "html": "Method: I analysed trends per GP in my AB Monitoring Portal field-visit data (August 2023 onward), cross-checked against official Panchayati Raj and health department records, then went to the hotspots the map surfaced to investigate in person. I built the web pages and cleaned the data using Claude, an AI assistant, working on problems and requirements I had identified in my own fieldwork."
-     },
-     {
-      "k": "p",
-      "html": "<a href=\"https://ms221088.github.io/Salarpur_KPI_maps/\" target=\"_blank\" rel=\"noopener\">View the live map: ms221088.github.io/Salarpur_KPI_maps</a>"
-     },
-     {
-      "k": "img",
-      "src": "img/kpi-3.jpg",
-      "cap": "",
-      "w": 1427,
-      "h": 1071
-     }
-    ]
-   },
-   {
-    "title": "End Users — Goals, Needs, Details",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "ul",
-      "items": [
-       "BCPM (Block Community Process Manager), BPM (Block Programme Manager) and MOIC (Medical Officer In-Charge, the doctor heading the block's health services) — need to see quickly which of 77 GPs need attention on which of 22 indicators.",
-       "UNICEF field team — needs a shared, credible view of the block's health and nutrition gaps for its own reviews.",
-       "NGOs visiting families of zero-dose children (children who have missed all routine vaccines) — need to know which villages to prioritise for counselling visits.",
-       "ICDS Supervisor and CDPO (Child Development Project Officer, head of ICDS in the block) — need GP-level visibility of ICDS indicators: nutrition, growth measurement and the facilities at Anganwadi Centres (AWCs), the village centres for child nutrition and pre-school care.",
-       "Me — the main user, for my own field monitoring, analysis and reporting."
-      ]
-     }
-    ]
-   },
-   {
-    "title": "Methodology",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "My data comes from random-sample field visits, recorded on the AB Monitoring Portal since August 2023. It is a sample, not a census, so the number of visits varies across GPs and indicators. Building the map meant reconciling two structures that don't match: GP and hamlet boundaries (from Panchayati Raj and health department records), and the health department's reporting units, where each GP is served by one or more ASHAs (village health workers) depending on population. An ASHA's area doesn't line up neatly with GP boundaries. GP names were also spelled differently, and sometimes written in different languages, in the map and in the monitoring data; I reconciled them while cleaning the data, using Claude."
-     }
-    ]
-   },
-   {
-    "title": "Collected Data",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "ul",
-      "items": [
-       "22 indicators across three themes: health and nutrition, ICDS, and basic infrastructure (including sub-indicators for antenatal check-ups).",
-       "All 77 Gram Panchayats of Salarpur block.",
-       "Visits per GP, used as the confidence signal behind each reading.",
-       "Data from August 2023 to the present, viewable as an all-time figure or by quarter."
-      ]
-     }
-    ]
-   },
-   {
-    "title": "Synthesis",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "I built two views from the same data, for two ways of using it:"
-     },
-     {
-      "k": "ul",
-      "items": [
-       "A GP heat map, where colour shows the indicator's rate and opacity shows the number of visits, so a strong reading built on very few visits looks different from the same reading built on many. I had raised the concern that a 100% reading from a barely-visited GP needed checking, not celebrating. Claude suggested showing confidence as opacity; I judged that it solved the actual problem and directed the implementation from there.",
-       "A ranked table listing the most critical GPs first. A heat map is good for a visual scan, but a prioritised list is what you need to decide where to act first."
-      ]
-     },
-     {
-      "k": "p",
-      "html": "The map uses quarterly weighted averages rather than raw monthly figures, matching how planning reviews actually use the data."
-     },
-     {
-      "k": "img",
-      "src": "img/kpi-4.jpg",
-      "cap": "Same rate, different visit counts — opacity shows which reading to trust",
-      "w": 707,
-      "h": 463
-     },
-     {
-      "k": "img",
-      "src": "img/kpi-5.jpg",
-      "cap": "Priority list tab — GPs ranked most-critical first (KPI 1.1, all-time). Beneficiary-level columns hidden for privacy.",
-      "w": 1600,
-      "h": 1461
-     }
-    ]
-   },
-   {
-    "title": "Findings",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "ul",
-      "items": [
-       "Urine tests at antenatal check-ups: the map flagged Sikrodi village as a low-completion hotspot. When I investigated, I found the cause: check-ups there happen at the ASHA's home, and pregnant women aren't allowed to use her toilet, so no urine sample can be collected on the spot."
-      ]
-     },
-     {
-      "k": "img",
-      "src": "img/kpi-6.jpg",
-      "cap": "Sikrodi on KPI 1.15(b) urine test, Q2 2026 — urine test done in 2 of 5 monitored ANC cases (40%)",
-      "w": 1008,
-      "h": 1010
-     },
-     {
-      "k": "ul",
-      "items": [
-       "Institutional delivery (births in a hospital or health centre rather than at home): hotspots of home births traced back to villages with especially active, trusted dais (traditional birth attendants). That's a trust and behaviour factor the numbers alone would never have shown."
-      ]
-     },
-     {
-      "k": "img",
-      "src": "img/kpi-7.jpg",
-      "cap": "KPI 1.2 institutional delivery, all-time — red and brown GPs mark the home-delivery hotspots",
-      "w": 1600,
-      "h": 1190
-     },
-     {
-      "k": "ul",
-      "items": [
-       "Data integrity: the ODF+ indicator (villages that are free of open defecation and keep up sanitation) relied on a self-reported list of families without toilets. I cross-checked it with the Panchayati Raj department through the CDO (Chief Development Officer, the senior development official in the district), Budaun. Of 60 listed families, only 29 were actually still eligible; the rest had already received toilets."
-      ]
-     }
-    ]
-   },
-   {
-    "title": "Solution Space",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "I built the map as an SVG in Inkscape, not because that's the standard GIS approach, but because SVG was a format I already knew and could map data onto directly. I had no GIS background, so I learned to trace GP and hamlet boundaries from YouTube tutorials instead of adopting dedicated GIS software. I kept both the heat map and the ranked table rather than choosing one, because they serve different moments: the map for spotting spatial patterns, the table for deciding what to do first."
-     }
-    ]
-   },
-   {
-    "title": "Outcome",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "The map is in active use by the BCPM, BPM, MOIC, the UNICEF team, the ICDS Supervisor and CDPO, and NGOs working with zero-dose children, each to target their own focus areas. It has led to field investigations that uncovered specific, non-obvious root causes (Sikrodi, and the dais), and to one data correction: I removed the ODF+ indicator after checking showed its underlying data was largely unreliable."
-     }
-    ]
-   },
-   {
-    "title": "Before and After: Measuring Change",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "A District Development Officer asked whether the map could show before and after. A quarter-by-quarter comparison would mostly show noise, because most GPs get only one to four visits a quarter. So I used <em>rounds</em> instead: a round ends when at least 95% of the block's GPs have been visited. Round 1 ran from Aug 2023 to Dec 2024 (74 of 77 GPs), round 2 from Jan 2025 to Sep 2026 (75 of 77)."
-     },
-     {
-      "k": "img",
-      "src": "img/kpi-8.jpg",
-      "cap": "Indicator 1.1 (first-trimester ANC registration), round 1 vs round 2, on the same colour scale. Faint colour means few visits."
-     },
-     {
-      "k": "p",
-      "html": "The new tab shows the two maps side by side, a change map that colours a GP only where both rounds have at least three people (the rest are marked as not enough data), a block-level graph of every indicator with its numerator and denominator, and an Excel export. Improvements at block level between the two rounds:"
-     },
-     {
-      "k": "ul",
-      "items": [
-       "Iron-folic acid tablets during ANC (my own proxy indicator): 68.8% → 97.1% (+28.3 percentage points)",
-       "At least 4 ANC check-ups: 58.9% → 77.6% (+18.6)",
-       "Working household tap connections: 4.2% → 22.9% (+18.7)",
-       "Diabetes screening: 14.0% → 29.0% (+15.1); monitored only from 2024, so round 1 covers fewer GPs",
-       "First-trimester ANC registration: 34.7% → 44.8% (+10.1)",
-       "Supplementary nutrition for children aged 6 months to 6 years: 59.4% → 69.4% (+10.0)"
-      ]
-     },
-     {
-      "k": "img",
-      "src": "img/kpi-9.jpg",
-      "cap": "Every indicator at block level: hollow dot = round 1, filled dot = round 2. Falls are shown as openly as gains."
-     },
-     {
-      "k": "p",
-      "html": "Building it forced two honesty checks. Supplementary nutrition for pregnant women seemed to fall sharply, but the drop was a single step in April 2024, when I had changed the question from &ldquo;got enough&rdquo; to &ldquo;got it at least four times&rdquo;. I now leave the earlier quarters out of every comparison. A dip in Jul&ndash;Dec 2025 lined up with the start of the Face Recognition System for take-home ration, so I marked that date on the trend charts instead of letting it read as a failure of the programme."
-     },
-     {
-      "k": "p",
-      "html": "I also removed beneficiary names from the public site. The priority list now shows each village once, with its gaps and the number of people, and merges the many spellings of the same village (301 spellings became 181). Names stay with the departments that need them for follow-up."
-     }
-    ]
-   },
-   {
-    "title": "Impact on End Users & Administration",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "Different departments and organisations now share one GP-level reference for where to focus, instead of each working from raw, unranked data or none at all. Some official systems do map at village level, for example the Jal Jeevan Mission's tap-coverage dashboards, but none I use brings the block's UP ABP+ indicators together at GP level, built from verified field visits and with a visible cue for how reliable each reading is. That is the gap this tool fills: the level where root causes like Sikrodi's become visible and actionable."
-     }
-    ]
-   },
-   {
-    "title": "What I Learned",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "ul",
-      "items": [
-       "A strong-looking number built on thin data is a signal to check, not a result to trust. That idea shaped the whole confidence encoding.",
-       "Self-reported data needs independent checking before it's shown as fact. The ODF+ case (60 listed, 29 eligible) showed how far off it can be.",
-       "Administrative and departmental boundaries don't automatically line up (GP boundaries versus ASHA areas). Reconciling them is groundwork, not a side detail."
-      ]
-     }
-    ]
-   },
-   {
-    "title": "Challenges & How I Overcame Them",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "ul",
-      "items": [
-       "No GIS background: I taught myself to trace boundaries in Inkscape from YouTube tutorials, and chose SVG because I could already work with it and map data onto it directly.",
-       "GP and hamlet boundaries didn't match the health department's ASHA-based reporting units: I reconciled them through careful data mapping.",
-       "GP names were spelled differently, or written in different languages, in the map and the monitoring data: I cleaned and matched them using Claude.",
-       "Boundary and naming errors in the base map: I corrected them over many rounds (up to version 20) by cross-checking village, hamlet and sub-village lists I got directly from the Panchayati Raj and health departments."
-      ]
-     }
-    ]
-   },
-   {
-    "title": "What I Would Do Differently",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "I'd keep the same tool choice; SVG in Inkscape is still the right fit because it maps so directly to data. Two additions I had planned are now live: a Monitoring trends tab with each indicator's quarterly trend, and a Before vs after tab (above). Next, I would agree the questions and definitions with departments before monitoring starts, so that no indicator needs to be cut from a comparison later."
-     }
-    ]
-   }
-  ],
-  "glossary": [
-   "<strong>Gram Panchayat (GP)</strong> — an elected village council, the smallest unit of local government. Salarpur block has 77. <a href=\"https://en.wikipedia.org/wiki/Gram_panchayat\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>Block (Vikas Khand)</strong> — the administrative level below a district. <a href=\"https://en.wikipedia.org/wiki/Community_development_block_in_India\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>Hamlet (majra)</strong> — a small settlement that belongs to a larger village or Gram Panchayat.",
-   "<strong>UP ABP+ (Uttar Pradesh Aspirational Blocks Programme)</strong> — the state programme, run by the Planning Department, that tracks 108 lagging blocks on 50 development indicators. <a href=\"https://epariyojana.up.gov.in/TABP/OrderGOs.aspx\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>AB Monitoring Portal</strong> — the Planning Department's portal where CM Fellows record their random-sample monitoring visits in aspirational blocks.",
-   "<strong>KPI</strong> — key performance indicator; here, one of the 22 indicators I monitor (for example, the share of pregnant women who register for ANC in the first trimester).",
-   "<strong>ICDS (Integrated Child Development Services)</strong> — India's programme for child nutrition, health and pre-school care, delivered through Anganwadi Centres. <a href=\"https://en.wikipedia.org/wiki/Integrated_Child_Development_Services\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>Anganwadi Centre (AWC)</strong> — the village centre for child nutrition and pre-school care, run by an Anganwadi worker. <a href=\"https://en.wikipedia.org/wiki/Anganwadi\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>ASHA (Accredited Social Health Activist)</strong> — a village woman trained and paid as the community's link to the health system; one per 1,000 people or so. <a href=\"https://en.wikipedia.org/wiki/Accredited_Social_Health_Activist\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>ANC (antenatal care)</strong> — health check-ups during pregnancy. <a href=\"https://en.wikipedia.org/wiki/Prenatal_care\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>BCPM (Block Community Process Manager)</strong> — oversees the block's ASHAs and community health activities.",
-   "<strong>BPM (Block Programme Manager)</strong> — manages the block's National Health Mission programmes and data. <a href=\"https://en.wikipedia.org/wiki/National_Health_Mission\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>MOIC (Medical Officer In-Charge)</strong> — the doctor who heads the block's government health services.",
-   "<strong>CDPO (Child Development Project Officer)</strong> — the officer who heads ICDS in the block.",
-   "<strong>ICDS Supervisor</strong> — supervises a group of Anganwadi Centres.",
-   "<strong>CDO (Chief Development Officer)</strong> — the senior official in charge of development programmes across the district.",
-   "<strong>Panchayati Raj department</strong> — the state department responsible for Gram Panchayats and village local government. <a href=\"https://en.wikipedia.org/wiki/Panchayati_raj_in_India\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>ODF+</strong> — a village status meaning it is free of open defecation and maintains sanitation; it depends on every household having a toilet. <a href=\"https://en.wikipedia.org/wiki/Swachh_Bharat_Mission\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>Zero-dose children</strong> — children who have not received any routine vaccines.",
-   "<strong>Institutional delivery</strong> — a birth in a hospital or health centre rather than at home.",
-   "<strong>Dai</strong> — a traditional birth attendant, usually an older woman in the village with no formal training. <a href=\"https://en.wikipedia.org/wiki/Traditional_birth_attendant\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>Poshan Tracker</strong> — the national app Anganwadi workers use to record child nutrition data. <a href=\"https://poshantracker.in/\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>SVG (Scalable Vector Graphics)</strong> — an image format made of shapes that code can colour individually, which is how each GP on my maps is filled with data. <a href=\"https://en.wikipedia.org/wiki/SVG\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>Inkscape</strong> — free, open-source drawing software; I used it to trace GP and hamlet boundaries. <a href=\"https://inkscape.org/\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>GIS (Geographic Information System)</strong> — specialist mapping software, such as QGIS or ArcGIS, normally used for maps like these. <a href=\"https://en.wikipedia.org/wiki/Geographic_information_system\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>Choropleth map</strong> — a map where areas are shaded by a value, here each GP by its rate. <a href=\"https://en.wikipedia.org/wiki/Choropleth_map\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>Round</strong> — one pass of monitoring visits that covers at least 95% of the block's Gram Panchayats.",
-   "<strong>Percentage point</strong> — the plain difference between two percentages, e.g. 34.7% to 44.8% is +10.1 percentage points.",
-   "<strong>Proxy indicator</strong> — an extra measure I added to track one part of an official KPI, such as whether iron tablets were given during ANC.",
-   "<strong>FRS (Face Recognition System)</strong> — the Poshan Tracker step, from mid-2025, that matches a beneficiary's face before take-home ration is handed over.",
-   "<strong>Take-home ration (THR)</strong> — packaged supplementary food given by Anganwadi Centres to pregnant and breastfeeding women and young children.",
-   "<strong>FHTC (Functional Household Tap Connection)</strong> — a working piped-water tap at home, under the Jal Jeevan Mission."
-  ]
- },
- {
   "slug": "tb",
   "title": "Mapping TB by Gram Panchayat",
   "fullTitle": "Mapping TB Burden at Gram Panchayat Level: Turning Free-Text Nikshay Data into a Spatial TB Surveillance Tool for Salarpur Block, Budaun",
@@ -1195,6 +1195,448 @@ window.CASE_STUDIES = [
    "<strong>Sanchari Rog Abhiyaan</strong> — Uttar Pradesh's communicable-disease control campaign, run in phases through the year (including April and October).",
    "<strong>Sputum test</strong> — a test of coughed-up mucus, the standard first test for TB.",
    "<strong>Warli</strong> — a tribal painting style from Maharashtra, made of simple white figures. <a href=\"https://en.wikipedia.org/wiki/Warli_painting\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>Census 2011</strong> — India's most recent completed national census; the source for village population figures. <a href=\"https://en.wikipedia.org/wiki/2011_census_of_India\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>Choropleth map</strong> — a map where areas are shaded by a value, here each GP by its rate. <a href=\"https://en.wikipedia.org/wiki/Choropleth_map\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>Salarpur Health Hotspot Maps</strong> — my public dashboards for diarrhoea, malaria and TB. <a href=\"https://ms221088.github.io/Salarpur_Budaun_Health_Maps/\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>KPI monitoring map</strong> — my GP-level dashboard of Aspirational Blocks indicators (see my KPI Focus Area case study). <a href=\"https://ms221088.github.io/Salarpur_KPI_maps/\" target=\"_blank\" rel=\"noopener\">Learn more</a>"
+  ]
+ },
+ {
+  "slug": "diarrhoea",
+  "title": "Diarrhoea and Tap Water",
+  "fullTitle": "Linking Diarrhoea Hotspots to Water Access: Cross-Referencing Case Data with Jal Jeevan Mission Tap-Water Coverage",
+  "subtitle": "Cross-referencing diarrhoea cases with household tap-water coverage, Salarpur Block, Budaun",
+  "card": "I noticed on my map that villages with tap connections seemed to have fewer child diarrhoea cases, then tested it: a 25.4% lower rate, real but partial, shared with water and health departments.",
+  "methods": [
+   "Hypothesis from a map",
+   "Cross-dataset analysis",
+   "Stakeholder briefing"
+  ],
+  "when": "Data Jun 2022 – May 2026",
+  "cover": "img/diarrhoea-3.jpg",
+  "live": [
+   "Open the live dashboard",
+   "https://ms221088.github.io/Salarpur_Budaun_Health_Maps/"
+  ],
+  "sections": [
+   {
+    "title": "Quick Summary",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "I built a diarrhoea surveillance map covering all 77 Gram Panchayats (GPs) of Salarpur block. It uses cases among children under 5 (U5) between June 2022 and May 2026, from e-Kavach, the Uttar Pradesh health department's reporting portal, and from reports by ASHAs, the village health workers: 264 cases in 63 of the 77 GPs. I didn't want to stop at showing where diarrhoea clustered, so I compared the cases with tap-water coverage under Jal Jeevan Mission (JJM), the national scheme to give every rural home a piped water connection, which JJM measures as an FHTC (Functional Household Tap Connection). The effect I found was real but partial: GPs with confirmed FHTC had 7.43 cases per 1,000 under-5 children, against 9.96 in GPs without, a 25.4% lower rate where tap water was present. I presented this to the engineers building the water network (from Jal Nigam, the state water-supply agency, and its contractor PNC), to the health department, and to block and district officials at review meetings."
+     },
+     {
+      "k": "p",
+      "html": "Method: I analysed case counts per GP from e-Kavach and ASHA reports (June 2022–May 2026) and compared them with JJM's FHTC records. To keep diarrhoea, malaria and TB rates comparable across my three disease dashboards, I projected every GP's Census 2011 population to a single 2024 base year at 1.65% compound annual growth."
+     },
+     {
+      "k": "p",
+      "html": "<a href=\"https://ms221088.github.io/Salarpur_Budaun_Health_Maps/\" target=\"_blank\" rel=\"noopener\">View the live dashboard: ms221088.github.io/Salarpur_Budaun_Health_Maps (Diarrhoea tab)</a>"
+     },
+     {
+      "k": "img",
+      "src": "img/diarrhoea-1.jpg",
+      "cap": "Diarrhoea Surveillance Dashboard — under-5 burden per 1,000 children by GP (264 cases across 77 GPs, Jun 2022–May 2026)",
+      "w": 1600,
+      "h": 1000
+     }
+    ]
+   },
+   {
+    "title": "End Users — Goals, Needs, Details",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "ul",
+      "items": [
+       "Jal Nigam engineers (JE/AE, Junior and Assistant Engineers) and the engineer from PNC, the contractor laying the pipes — need to know where poor water access may be adding to disease, so they can prioritise tap connections there.",
+       "The health department — needs to see whether a non-medical fix, water access, could reduce cases alongside clinical treatment.",
+       "Panchayat officials: Sachivs (Gram Panchayat secretaries), the BDO (Block Development Officer, the block's chief administrator) and the ADO-Panchayat (the block officer who supervises the secretaries) — need GP-level evidence for planning and review meetings.",
+       "Me — I did the analysis and presented the finding at block and district meetings."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Methodology",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "I took under-5 case data from e-Kavach and ASHA reports for all 77 GPs, June 2022 to May 2026. My malaria and TB dashboards cover different years, so to make all three comparable I used one population base year, 2024, across the whole project. I projected each GP's Census 2011 population forward at 1.65% compound annual growth and checked that rate against an independent district-level estimate of 1.66%. I then added each GP's FHTC status to the same 77-GP base so I could compare it with case rates."
+     }
+    ]
+   },
+   {
+    "title": "Collected Data",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "ul",
+      "items": [
+       "264 diarrhoea cases in 63 of 77 GPs, June 2022–May 2026.",
+       "Block average: 12.2 cases per 1,000 under-5 children. Highest burden: Khaspur, at 43.4 per 1,000.",
+       "Seasonal pattern: 84% of cases (222 of 264) came in the monsoon months, June to August.",
+       "FHTC status for 76 GPs: 21 with confirmed tap connections, 55 without."
+      ]
+     },
+     {
+      "k": "img",
+      "src": "img/diarrhoea-2.jpg",
+      "cap": "Monthly epidemic curve — 222 of 264 cases (84%) fell in the June–August monsoon months",
+      "w": 1600,
+      "h": 778
+     }
+    ]
+   },
+   {
+    "title": "Synthesis",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "I put the diarrhoea data and the FHTC data on the same GP boundaries so they could be read together. Scanning the combined map, I noticed that GPs with confirmed tap connections seemed to report fewer cases, or none. To test that hunch, I asked Claude, an AI assistant, to calculate the actual rates from the case and FHTC data. It came back with 7.43 against 9.96 per 1,000, a 25.4% difference. The idea that water access might be a driver came from my reading of the map; the AI turned that visual impression into a rate comparison."
+     },
+     {
+      "k": "img",
+      "src": "img/diarrhoea-3.jpg",
+      "cap": "JJM tab — GPs with confirmed FHTC (green) vs. without (red), with the case-rate comparison above the map",
+      "w": 1600,
+      "h": 1000
+     }
+    ]
+   },
+   {
+    "title": "Findings",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "ul",
+      "items": [
+       "GPs with confirmed FHTC have a 25.4% lower diarrhoea rate than GPs without (7.43 vs 9.96 per 1,000 under-5 children). The link is real but partial: tap water alone doesn't explain every hotspot, and some high-burden GPs need a separate explanation."
+      ]
+     },
+     {
+      "k": "img",
+      "src": "img/diarrhoea-4.jpg",
+      "cap": "FHTC GPs: 7.43 cases per 1,000 U5 vs. 9.96 in non-FHTC GPs — a 25.4% lower rate where tap water is present",
+      "w": 1600,
+      "h": 125
+     },
+     {
+      "k": "ul",
+      "items": [
+       "Diarrhoea here is strongly seasonal: 84% of cases come in the monsoon, which points to rainy-season water contamination as a major factor whether or not a GP has tap connections.",
+       "Khaspur stands out as the highest-burden GP (43.4 per 1,000) and needs focused follow-up beyond the block-wide pattern."
+      ]
+     },
+     {
+      "k": "img",
+      "src": "img/diarrhoea-5.jpg",
+      "cap": "Khaspur — 16 cases on an under-5 population of 369 (43.4 per 1,000, against a block average of 12.2)",
+      "w": 994,
+      "h": 984
+     }
+    ]
+   },
+   {
+    "title": "Solution Space",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "Instead of cross-referencing, I could have presented the diarrhoea hotspot map on its own, as a list of high-burden GPs for each department to act on separately. Adding FHTC status turned it into a hypothesis that could be tested and acted on. It gave Jal Nigam and PNC a specific, checkable reason to prioritise certain GPs, not just a list of case counts with no suggested cause."
+     }
+    ]
+   },
+   {
+    "title": "Outcome",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "I presented the finding to the Jal Nigam engineers, PNC's engineer, the health department, and the Sachivs, BDO and ADO-Panchayat at block and district meetings. It gave the water-supply and health departments one shared, GP-by-GP reference instead of two separate datasets that nobody had compared."
+     }
+    ]
+   },
+   {
+    "title": "Impact on End Users & Administration",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "Departments that usually plan water and health work separately now have shared evidence connecting the two. The FHTC link gives Jal Nigam and PNC a health reason for prioritising specific GPs' tap connections, rather than sequencing the rollout by engineering convenience alone."
+     }
+    ]
+   },
+   {
+    "title": "What I Learned",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "ul",
+      "items": [
+       "A pattern I notice on a map is a hypothesis, not a finding. I had to put a number on it before presenting it to departments as evidence.",
+       "A partial effect (25.4% lower, not a dramatic difference) is more believable and more useful for planning than an inflated claim. I presented it as exactly that: a real but partial factor.",
+       "Using one population base year across three disease dashboards was groundwork I had to do before any comparison across diseases or datasets could be trusted."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Challenges & How I Overcame Them",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "ul",
+      "items": [
+       "Comparing datasets that cover different years (diarrhoea June 2022–May 2026, malaria 2023–2025, TB 2020–2025): I chose one central base year, 2024, and checked my projection method against an independent growth estimate.",
+       "Turning a visual impression into a defensible statistic: I asked Claude to calculate the actual FHTC-linked rates from the underlying data rather than presenting the visual pattern alone."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "What I Would Do Differently",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "Because the link is only partial, my next step would be to find out what sets apart high-burden GPs like Khaspur that don't fit the FHTC pattern. I'd use the same on-the-ground root-cause visits I made for my KPI monitoring map, to find causes other than water before the next departmental review."
+     }
+    ]
+   }
+  ],
+  "glossary": [
+   "<strong>Gram Panchayat (GP)</strong> — an elected village council, the smallest unit of local government. Salarpur block has 77. <a href=\"https://en.wikipedia.org/wiki/Gram_panchayat\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>Block (Vikas Khand)</strong> — the administrative level below a district. <a href=\"https://en.wikipedia.org/wiki/Community_development_block_in_India\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>UP ABP+ (Uttar Pradesh Aspirational Blocks Programme)</strong> — the state programme, run by the Planning Department, that tracks 108 lagging blocks on 50 development indicators. <a href=\"https://epariyojana.up.gov.in/TABP/OrderGOs.aspx\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>Diarrhoea</strong> — a leading cause of illness and death in young children, often spread through unsafe water. <a href=\"https://en.wikipedia.org/wiki/Diarrhea\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>U5</strong> — children under 5 years old.",
+   "<strong>ASHA (Accredited Social Health Activist)</strong> — a village woman trained and paid as the community's link to the health system; one per 1,000 people or so. <a href=\"https://en.wikipedia.org/wiki/Accredited_Social_Health_Activist\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>e-Kavach</strong> — the Uttar Pradesh health department's online portal where health workers record cases and services.",
+   "<strong>JJM (Jal Jeevan Mission)</strong> — the national scheme to give every rural household a piped drinking-water connection. <a href=\"https://jaljeevanmission.gov.in/\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>FHTC (Functional Household Tap Connection)</strong> — JJM's measure of a working tap connection at a home. <a href=\"https://en.wikipedia.org/wiki/Jal_Jeevan_Mission\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>Jal Nigam</strong> — Uttar Pradesh's state agency for building water-supply systems.",
+   "<strong>JE / AE</strong> — Junior Engineer / Assistant Engineer.",
+   "<strong>PNC</strong> — the private contractor company laying the tap-water network in the block.",
+   "<strong>Sachiv (Panchayat Secretary)</strong> — the government official who runs a Gram Panchayat's office and records.",
+   "<strong>BDO (Block Development Officer)</strong> — the block's chief administrative officer.",
+   "<strong>ADO-Panchayat (Assistant Development Officer, Panchayat)</strong> — the block officer who supervises Gram Panchayat secretaries.",
+   "<strong>Census 2011</strong> — India's most recent completed national census; the source for village population figures. <a href=\"https://en.wikipedia.org/wiki/2011_census_of_India\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>Choropleth map</strong> — a map where areas are shaded by a value, here each GP by its rate. <a href=\"https://en.wikipedia.org/wiki/Choropleth_map\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>Salarpur Health Hotspot Maps</strong> — my public dashboards for diarrhoea, malaria and TB. <a href=\"https://ms221088.github.io/Salarpur_Budaun_Health_Maps/\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>KPI monitoring map</strong> — my GP-level dashboard of Aspirational Blocks indicators (see my KPI Focus Area case study). <a href=\"https://ms221088.github.io/Salarpur_KPI_maps/\" target=\"_blank\" rel=\"noopener\">Learn more</a>"
+  ]
+ },
+ {
+  "slug": "malaria",
+  "title": "Malaria Hotspots to Their Cause",
+  "fullTitle": "Mapping Malaria Hotspots to Their Physical Cause: A District-Contextualized, Village-Level Analysis for Salarpur Block, Budaun",
+  "subtitle": "From village-level case data to a specific, actionable water-source diagnosis for Salarpur Block, Budaun",
+  "card": "Village rankings pointed to 12 critical villages; field visits traced them to sewage-fed ponds choked with water hyacinth, which turned a hotspot list into a fixable recommendation.",
+  "methods": [
+   "Root-cause fieldwork",
+   "Ranking & clustering",
+   "Community dissemination"
+  ],
+  "when": "Data 2023–2025 · built 2026",
+  "cover": "img/malaria-1.jpg",
+  "live": [
+   "Open the live dashboard",
+   "https://ms221088.github.io/Salarpur_Budaun_Health_Maps/"
+  ],
+  "sections": [
+   {
+    "title": "Quick Summary",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "Salarpur block recorded 712 malaria cases between 2023 and 2025, in 69 of its 77 Gram Panchayats (GPs). Three years is all the data the District Malaria Officer's (DMO's) office had. When I ranked villages using the DMO's own village-level report, one stood out sharply: Ghatbeti (Ghat Behti on the map), at roughly double the rate of the next village. There was also a geographic pattern: the seven GPs of the Puthi Sarai Nyay Panchayat (a cluster of neighbouring GPs) together carry about 108 of the 712 cases, roughly 15% of the block's total. From the ranking I identified 12 critical villages for priority action, spread across several Nyay Panchayats. Field visits traced the pattern to a physical cause: large ponds fed by sewage and choked with water hyacinth, where mosquitoes breed in the still water. That gave a concrete recommendation: clean the ponds in the 12 villages during the Sanchari Rog Abhiyaan, Uttar Pradesh's communicable-disease control campaign. I built the map in the month before the campaign's April phase. The response so far is partial: anti-larval spraying has been done; fogging hasn't, because no fogging machines were available (they were being purchased in October, ahead of the October phase); pond restoration is planned but not done. Separately, I compared all 15 blocks of Budaun district: Salarpur ranks 5th by rate, and highest of Budaun's 6 Aspirational Blocks. That comparison is context only; it wasn't part of how I chose Salarpur or the 12 villages."
+     },
+     {
+      "k": "p",
+      "html": "Method: I analysed case counts by village and GP from the DMO office's malaria data (2023–2025), for Salarpur and, for comparison, for all 15 blocks of Budaun district. Populations use the same 2024 base year as my diarrhoea and TB dashboards. I cleaned the data and built the dashboard using Claude, an AI assistant, working from the DMO's raw village-level report."
+     },
+     {
+      "k": "p",
+      "html": "<a href=\"https://ms221088.github.io/Salarpur_Budaun_Health_Maps/\" target=\"_blank\" rel=\"noopener\">View the live dashboard: ms221088.github.io/Salarpur_Budaun_Health_Maps (Malaria tab)</a>"
+     },
+     {
+      "k": "img",
+      "src": "img/malaria-1.jpg",
+      "cap": "Malaria Surveillance Dashboard — rate per 10,000 by GP (712 cases, 2023–2025)",
+      "w": 1600,
+      "h": 1000
+     }
+    ]
+   },
+   {
+    "title": "End Users — Goals, Needs, Details",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "ul",
+      "items": [
+       "The malaria monitor in the DMO's office — supplied the raw village data, and needs the cleaned, ranked map back to plan spraying, fogging and surveillance.",
+       "Panchayati Raj department (the state department for village local government) — responsible for cleaning and restoring village ponds, the intervention the finding points to.",
+       "Rural Development department — responsible for the drainage and sewage flowing into the ponds.",
+       "WhatsApp groups of frontline workers, farmers and SHGs (Self-Help Groups, village women's savings groups) — to spread the finding in the community, beyond the usual official channels.",
+       "Sanchari Rog Abhiyaan planners — need a target list of critical villages before the campaign instead of blanket coverage.",
+       "Me — the analyst, presenting both the block-level and district-comparison findings."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Methodology",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "The malaria monitor in the DMO's office gave me village-level case data for Salarpur covering 2023–2025. That was the full span in the DMO's records, not a window I chose. I cleaned the village report and ranked villages by rate per population, then mapped the cases onto GP boundaries for the dashboard, using the same GP, village and hamlet lists I'd used to clean my diarrhoea and TB data. Separately, I built a district-wide comparison from a DMO summary report covering all 15 Budaun blocks (2023–2025), to see where Salarpur stands against the district and against Budaun's other 5 Aspirational Blocks. Both analyses use the same 2024 population base year as my other dashboards."
+     }
+    ]
+   },
+   {
+    "title": "Collected Data",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "ul",
+      "items": [
+       "Salarpur: 712 cases in 2023–2025 (716 in the DMO's district summary): 217 in 2023, 310 in 2024 and 185 in 2025. 69 of 77 GPs reported at least one case.",
+       "All 15 Budaun blocks: 7,798 cases in 2023–2025, a district rate of 3.22 per 1,000 people.",
+       "Salarpur's rate (3.57 per 1,000) ranks 5th of 15 blocks, after Samrer (9.47), Miyaun (6.34), Dataganj (5.88) and Jagat (3.99), and is the highest of Budaun's 6 Aspirational Blocks (the other 5 range from 0.57 to 2.8). This is context, not the reason I prioritised Salarpur.",
+       "Within Salarpur, Ghatbeti is the sharpest outlier, at roughly double the rate of the next village. The top-12 critical villages are spread across several Nyay Panchayats rather than one cluster.",
+       "A secondary pattern: the Puthi Sarai Nyay Panchayat (7 GPs: Faridpur Nausana, Ghat Behti, Bichhu Raiyya, Chandaura, Muhammadi, Puthi Sarai and Sadullapur Bhitara) carries about 108 of the 712 cases, about 15% of the block's total."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Synthesis",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "The village ranking within the block is what I actually used for targeting. It showed a sharp outlier (Ghatbeti) and a geographic cluster (the Puthi Sarai Nyay Panchayat, about 15% of cases), which together pointed to the 12 critical villages. I didn't hand this over as a bare list. I visited the top-ranked villages to find a physical cause first, so the departments responsible would know what to act on. The 15-block district comparison was a separate analysis that gave Salarpur's burden a wider frame; it ran alongside the targeting, not into it."
+     },
+     {
+      "k": "img",
+      "src": "img/malaria-2.jpg",
+      "cap": "Ghat Behti (34 cases, 247.1 per 10,000) and the surrounding Puthi Sarai Nyay Panchayat cluster",
+      "w": 790,
+      "h": 932
+     }
+    ]
+   },
+   {
+    "title": "Findings",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "ul",
+      "items": [
+       "Ghatbeti is a sharp outlier, at roughly double the rate of the next-highest village in the block.",
+       "Alongside it sits a cluster: the 7 GPs of the Puthi Sarai Nyay Panchayat together carry about 15% of the block's malaria. That's a real cluster effect, different from a single-village spike.",
+       "My field visits to the top-ranked villages traced the pattern to a physical cause: large ponds fed by sewage and choked with water hyacinth, where mosquitoes breed in still water. That's a mechanism, not just a statistical link.",
+       "The 12 critical villages are spread across several Nyay Panchayats, so pond cleaning has to be coordinated across several local bodies, not done in one area.",
+       "Separately, Salarpur ranks 5th of 15 Budaun blocks by rate and highest of the 6 Aspirational Blocks. That's useful context, but it wasn't part of how I prioritised Salarpur or the 12 villages."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Solution Space",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "Without field visits, I'd have handed departments a ranked hotspot list with no explanation, leaving them to guess the cause and the fix. Finding the mechanism, sewage-fed ponds choked with hyacinth, turned the list into a specific recommendation: clean these ponds, timed to the Sanchari Rog Abhiyaan. I also deliberately shared beyond the usual official channels (the malaria monitor, Panchayati Raj, Rural Development) to WhatsApp groups of frontline workers, farmers and SHGs, because stagnant ponds are something communities can report and act on themselves, not only something departments manage from above."
+     }
+    ]
+   },
+   {
+    "title": "Outcome",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "I shared the finding and the 12-village recommendation with the malaria monitor, Panchayati Raj, the Rural Development department and most of the frontline-worker, farmer and SHG WhatsApp groups, in the month before the campaign's April phase, as I did with my TB and diarrhoea dashboards. The response is real but partial. Anti-larval spraying has been done. Fogging hasn't, because fogging machines weren't available; they were being purchased in October for the campaign's October phase. Pond restoration, which tackles the root cause, is planned but not yet done."
+     }
+    ]
+   },
+   {
+    "title": "Impact on End Users & Administration",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "p",
+      "html": "Departments that would otherwise work from an unranked block total now have a prioritised village list linked to a cause. The district comparison places Salarpur's malaria burden against its real peer group, the other Aspirational Blocks, instead of leaving it as an isolated number. And because I shared it in community WhatsApp groups, the finding isn't only in the hands of officials who control spraying and fogging; the people living around the ponds can see it too."
+     }
+    ]
+   },
+   {
+    "title": "What I Learned",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "ul",
+      "items": [
+       "A village ranking can show two kinds of pattern at once: a single-village spike (Ghatbeti) and a wider cluster (the Puthi Sarai Nyay Panchayat). Both deserve naming separately, because they may need different responses.",
+       "A hotspot list is far more useful to departments once it's linked to a physical mechanism (sewage-fed, hyacinth-choked ponds). The same principle shaped my diarrhoea and tap-water analysis and the Sikrodi root-cause finding from my KPI monitoring map.",
+       "Recommendations made before a campaign don't get done on the campaign's timeline. Spraying, fogging and pond restoration are moving at different speeds depending on what each needs (staff time, buying equipment, coordination between departments). Reporting that honestly is more useful than treating \"shared\" as \"done\"."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Challenges & How I Overcame Them",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "ul",
+      "items": [
+       "The DMO's office had only 3 years of data (2023–2025). I worked within that limit; it was the data that existed, not a cleaning problem.",
+       "The 12 critical villages fall under several Nyay Panchayats, which makes coordinated action harder than a single clean-up. I shared the recommendation widely enough (Panchayati Raj, Rural Development and community WhatsApp groups) to reach each area instead of relying on one local body.",
+       "Fogging couldn't go ahead even though the recommendation was accepted, because there were no fogging machines. This isn't fully solved, but machines were being purchased in October for the October campaign phase."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "What I Would Do Differently",
+    "level": 1,
+    "blocks": [
+     {
+      "k": "ul",
+      "items": [
+       "Ask the DMO's office for a longer data history, so I can analyse multi-year malaria trends as I can for TB and diarrhoea.",
+       "Check equipment needs (like fogging machines) as part of the recommendation itself, instead of discovering the gap after spraying had started.",
+       "Extend the district-wide, peer-group comparison (Aspirational Blocks against all 15 blocks) to my diarrhoea and TB dashboards, since it gave useful context for presenting the malaria finding."
+      ]
+     }
+    ]
+   }
+  ],
+  "glossary": [
+   "<strong>Gram Panchayat (GP)</strong> — an elected village council, the smallest unit of local government. Salarpur block has 77. <a href=\"https://en.wikipedia.org/wiki/Gram_panchayat\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>Nyay Panchayat</strong> — a cluster of neighbouring Gram Panchayats, used for administration.",
+   "<strong>Block (Vikas Khand)</strong> — the administrative level below a district. <a href=\"https://en.wikipedia.org/wiki/Community_development_block_in_India\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>Hamlet (majra)</strong> — a small settlement that belongs to a larger village or Gram Panchayat.",
+   "<strong>UP ABP+ (Uttar Pradesh Aspirational Blocks Programme)</strong> — the state programme, run by the Planning Department, that tracks 108 lagging blocks on 50 development indicators. <a href=\"https://epariyojana.up.gov.in/TABP/OrderGOs.aspx\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>Malaria</strong> — a disease spread by mosquitoes that breed in standing water. <a href=\"https://en.wikipedia.org/wiki/Malaria\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>DMO (District Malaria Officer)</strong> — the official who heads malaria control in the district; the malaria monitor works in this office.",
+   "<strong>Panchayati Raj department</strong> — the state department responsible for Gram Panchayats and village local government. <a href=\"https://en.wikipedia.org/wiki/Panchayati_raj_in_India\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
+   "<strong>Rural Development department</strong> — the state department for rural works such as drainage and roads.",
+   "<strong>SHG (Self-Help Group)</strong> — a group of village women who save together and run small livelihoods, organised under the rural livelihoods mission. <a href=\"https://en.wikipedia.org/wiki/Self-help_group_(finance\" target=\"_blank\" rel=\"noopener\">Learn more</a>)",
+   "<strong>Sanchari Rog Abhiyaan</strong> — Uttar Pradesh's communicable-disease control campaign, run in phases through the year (including April and October).",
+   "<strong>Anti-larval spraying / fogging</strong> — killing mosquito larvae in standing water / spraying insecticide mist to kill adult mosquitoes.",
+   "<strong>Water hyacinth</strong> — a floating weed that covers ponds and keeps water still, which helps mosquitoes breed. <a href=\"https://en.wikipedia.org/wiki/Pontederia_crassipes\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
    "<strong>Census 2011</strong> — India's most recent completed national census; the source for village population figures. <a href=\"https://en.wikipedia.org/wiki/2011_census_of_India\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
    "<strong>Choropleth map</strong> — a map where areas are shaded by a value, here each GP by its rate. <a href=\"https://en.wikipedia.org/wiki/Choropleth_map\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
    "<strong>Salarpur Health Hotspot Maps</strong> — my public dashboards for diarrhoea, malaria and TB. <a href=\"https://ms221088.github.io/Salarpur_Budaun_Health_Maps/\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
@@ -1843,448 +2285,6 @@ window.CASE_STUDIES = [
    "<strong>FPO (Farmer Producer Organisation)</strong> — a company owned by farmers that buys inputs and sells produce together.",
    "<strong>UPI (Unified Payments Interface)</strong> — India's instant mobile payment system; people pay by scanning a QR code in apps such as Google Pay, PhonePe or BHIM. <a href=\"https://en.wikipedia.org/wiki/Unified_Payments_Interface\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
    "<strong>Block (Vikas Khand)</strong> — the administrative level below a district. <a href=\"https://en.wikipedia.org/wiki/Community_development_block_in_India\" target=\"_blank\" rel=\"noopener\">Learn more</a>"
-  ]
- },
- {
-  "slug": "diarrhoea",
-  "title": "Diarrhoea and Tap Water",
-  "fullTitle": "Linking Diarrhoea Hotspots to Water Access: Cross-Referencing Case Data with Jal Jeevan Mission Tap-Water Coverage",
-  "subtitle": "Cross-referencing diarrhoea cases with household tap-water coverage, Salarpur Block, Budaun",
-  "card": "I noticed on my map that villages with tap connections seemed to have fewer child diarrhoea cases, then tested it: a 25.4% lower rate, real but partial, shared with water and health departments.",
-  "methods": [
-   "Hypothesis from a map",
-   "Cross-dataset analysis",
-   "Stakeholder briefing"
-  ],
-  "when": "Data Jun 2022 – May 2026",
-  "cover": "img/diarrhoea-3.jpg",
-  "live": [
-   "Open the live dashboard",
-   "https://ms221088.github.io/Salarpur_Budaun_Health_Maps/"
-  ],
-  "sections": [
-   {
-    "title": "Quick Summary",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "I built a diarrhoea surveillance map covering all 77 Gram Panchayats (GPs) of Salarpur block. It uses cases among children under 5 (U5) between June 2022 and May 2026, from e-Kavach, the Uttar Pradesh health department's reporting portal, and from reports by ASHAs, the village health workers: 264 cases in 63 of the 77 GPs. I didn't want to stop at showing where diarrhoea clustered, so I compared the cases with tap-water coverage under Jal Jeevan Mission (JJM), the national scheme to give every rural home a piped water connection, which JJM measures as an FHTC (Functional Household Tap Connection). The effect I found was real but partial: GPs with confirmed FHTC had 7.43 cases per 1,000 under-5 children, against 9.96 in GPs without, a 25.4% lower rate where tap water was present. I presented this to the engineers building the water network (from Jal Nigam, the state water-supply agency, and its contractor PNC), to the health department, and to block and district officials at review meetings."
-     },
-     {
-      "k": "p",
-      "html": "Method: I analysed case counts per GP from e-Kavach and ASHA reports (June 2022–May 2026) and compared them with JJM's FHTC records. To keep diarrhoea, malaria and TB rates comparable across my three disease dashboards, I projected every GP's Census 2011 population to a single 2024 base year at 1.65% compound annual growth."
-     },
-     {
-      "k": "p",
-      "html": "<a href=\"https://ms221088.github.io/Salarpur_Budaun_Health_Maps/\" target=\"_blank\" rel=\"noopener\">View the live dashboard: ms221088.github.io/Salarpur_Budaun_Health_Maps (Diarrhoea tab)</a>"
-     },
-     {
-      "k": "img",
-      "src": "img/diarrhoea-1.jpg",
-      "cap": "Diarrhoea Surveillance Dashboard — under-5 burden per 1,000 children by GP (264 cases across 77 GPs, Jun 2022–May 2026)",
-      "w": 1600,
-      "h": 1000
-     }
-    ]
-   },
-   {
-    "title": "End Users — Goals, Needs, Details",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "ul",
-      "items": [
-       "Jal Nigam engineers (JE/AE, Junior and Assistant Engineers) and the engineer from PNC, the contractor laying the pipes — need to know where poor water access may be adding to disease, so they can prioritise tap connections there.",
-       "The health department — needs to see whether a non-medical fix, water access, could reduce cases alongside clinical treatment.",
-       "Panchayat officials: Sachivs (Gram Panchayat secretaries), the BDO (Block Development Officer, the block's chief administrator) and the ADO-Panchayat (the block officer who supervises the secretaries) — need GP-level evidence for planning and review meetings.",
-       "Me — I did the analysis and presented the finding at block and district meetings."
-      ]
-     }
-    ]
-   },
-   {
-    "title": "Methodology",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "I took under-5 case data from e-Kavach and ASHA reports for all 77 GPs, June 2022 to May 2026. My malaria and TB dashboards cover different years, so to make all three comparable I used one population base year, 2024, across the whole project. I projected each GP's Census 2011 population forward at 1.65% compound annual growth and checked that rate against an independent district-level estimate of 1.66%. I then added each GP's FHTC status to the same 77-GP base so I could compare it with case rates."
-     }
-    ]
-   },
-   {
-    "title": "Collected Data",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "ul",
-      "items": [
-       "264 diarrhoea cases in 63 of 77 GPs, June 2022–May 2026.",
-       "Block average: 12.2 cases per 1,000 under-5 children. Highest burden: Khaspur, at 43.4 per 1,000.",
-       "Seasonal pattern: 84% of cases (222 of 264) came in the monsoon months, June to August.",
-       "FHTC status for 76 GPs: 21 with confirmed tap connections, 55 without."
-      ]
-     },
-     {
-      "k": "img",
-      "src": "img/diarrhoea-2.jpg",
-      "cap": "Monthly epidemic curve — 222 of 264 cases (84%) fell in the June–August monsoon months",
-      "w": 1600,
-      "h": 778
-     }
-    ]
-   },
-   {
-    "title": "Synthesis",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "I put the diarrhoea data and the FHTC data on the same GP boundaries so they could be read together. Scanning the combined map, I noticed that GPs with confirmed tap connections seemed to report fewer cases, or none. To test that hunch, I asked Claude, an AI assistant, to calculate the actual rates from the case and FHTC data. It came back with 7.43 against 9.96 per 1,000, a 25.4% difference. The idea that water access might be a driver came from my reading of the map; the AI turned that visual impression into a rate comparison."
-     },
-     {
-      "k": "img",
-      "src": "img/diarrhoea-3.jpg",
-      "cap": "JJM tab — GPs with confirmed FHTC (green) vs. without (red), with the case-rate comparison above the map",
-      "w": 1600,
-      "h": 1000
-     }
-    ]
-   },
-   {
-    "title": "Findings",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "ul",
-      "items": [
-       "GPs with confirmed FHTC have a 25.4% lower diarrhoea rate than GPs without (7.43 vs 9.96 per 1,000 under-5 children). The link is real but partial: tap water alone doesn't explain every hotspot, and some high-burden GPs need a separate explanation."
-      ]
-     },
-     {
-      "k": "img",
-      "src": "img/diarrhoea-4.jpg",
-      "cap": "FHTC GPs: 7.43 cases per 1,000 U5 vs. 9.96 in non-FHTC GPs — a 25.4% lower rate where tap water is present",
-      "w": 1600,
-      "h": 125
-     },
-     {
-      "k": "ul",
-      "items": [
-       "Diarrhoea here is strongly seasonal: 84% of cases come in the monsoon, which points to rainy-season water contamination as a major factor whether or not a GP has tap connections.",
-       "Khaspur stands out as the highest-burden GP (43.4 per 1,000) and needs focused follow-up beyond the block-wide pattern."
-      ]
-     },
-     {
-      "k": "img",
-      "src": "img/diarrhoea-5.jpg",
-      "cap": "Khaspur — 16 cases on an under-5 population of 369 (43.4 per 1,000, against a block average of 12.2)",
-      "w": 994,
-      "h": 984
-     }
-    ]
-   },
-   {
-    "title": "Solution Space",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "Instead of cross-referencing, I could have presented the diarrhoea hotspot map on its own, as a list of high-burden GPs for each department to act on separately. Adding FHTC status turned it into a hypothesis that could be tested and acted on. It gave Jal Nigam and PNC a specific, checkable reason to prioritise certain GPs, not just a list of case counts with no suggested cause."
-     }
-    ]
-   },
-   {
-    "title": "Outcome",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "I presented the finding to the Jal Nigam engineers, PNC's engineer, the health department, and the Sachivs, BDO and ADO-Panchayat at block and district meetings. It gave the water-supply and health departments one shared, GP-by-GP reference instead of two separate datasets that nobody had compared."
-     }
-    ]
-   },
-   {
-    "title": "Impact on End Users & Administration",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "Departments that usually plan water and health work separately now have shared evidence connecting the two. The FHTC link gives Jal Nigam and PNC a health reason for prioritising specific GPs' tap connections, rather than sequencing the rollout by engineering convenience alone."
-     }
-    ]
-   },
-   {
-    "title": "What I Learned",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "ul",
-      "items": [
-       "A pattern I notice on a map is a hypothesis, not a finding. I had to put a number on it before presenting it to departments as evidence.",
-       "A partial effect (25.4% lower, not a dramatic difference) is more believable and more useful for planning than an inflated claim. I presented it as exactly that: a real but partial factor.",
-       "Using one population base year across three disease dashboards was groundwork I had to do before any comparison across diseases or datasets could be trusted."
-      ]
-     }
-    ]
-   },
-   {
-    "title": "Challenges & How I Overcame Them",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "ul",
-      "items": [
-       "Comparing datasets that cover different years (diarrhoea June 2022–May 2026, malaria 2023–2025, TB 2020–2025): I chose one central base year, 2024, and checked my projection method against an independent growth estimate.",
-       "Turning a visual impression into a defensible statistic: I asked Claude to calculate the actual FHTC-linked rates from the underlying data rather than presenting the visual pattern alone."
-      ]
-     }
-    ]
-   },
-   {
-    "title": "What I Would Do Differently",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "Because the link is only partial, my next step would be to find out what sets apart high-burden GPs like Khaspur that don't fit the FHTC pattern. I'd use the same on-the-ground root-cause visits I made for my KPI monitoring map, to find causes other than water before the next departmental review."
-     }
-    ]
-   }
-  ],
-  "glossary": [
-   "<strong>Gram Panchayat (GP)</strong> — an elected village council, the smallest unit of local government. Salarpur block has 77. <a href=\"https://en.wikipedia.org/wiki/Gram_panchayat\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>Block (Vikas Khand)</strong> — the administrative level below a district. <a href=\"https://en.wikipedia.org/wiki/Community_development_block_in_India\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>UP ABP+ (Uttar Pradesh Aspirational Blocks Programme)</strong> — the state programme, run by the Planning Department, that tracks 108 lagging blocks on 50 development indicators. <a href=\"https://epariyojana.up.gov.in/TABP/OrderGOs.aspx\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>Diarrhoea</strong> — a leading cause of illness and death in young children, often spread through unsafe water. <a href=\"https://en.wikipedia.org/wiki/Diarrhea\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>U5</strong> — children under 5 years old.",
-   "<strong>ASHA (Accredited Social Health Activist)</strong> — a village woman trained and paid as the community's link to the health system; one per 1,000 people or so. <a href=\"https://en.wikipedia.org/wiki/Accredited_Social_Health_Activist\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>e-Kavach</strong> — the Uttar Pradesh health department's online portal where health workers record cases and services.",
-   "<strong>JJM (Jal Jeevan Mission)</strong> — the national scheme to give every rural household a piped drinking-water connection. <a href=\"https://jaljeevanmission.gov.in/\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>FHTC (Functional Household Tap Connection)</strong> — JJM's measure of a working tap connection at a home. <a href=\"https://en.wikipedia.org/wiki/Jal_Jeevan_Mission\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>Jal Nigam</strong> — Uttar Pradesh's state agency for building water-supply systems.",
-   "<strong>JE / AE</strong> — Junior Engineer / Assistant Engineer.",
-   "<strong>PNC</strong> — the private contractor company laying the tap-water network in the block.",
-   "<strong>Sachiv (Panchayat Secretary)</strong> — the government official who runs a Gram Panchayat's office and records.",
-   "<strong>BDO (Block Development Officer)</strong> — the block's chief administrative officer.",
-   "<strong>ADO-Panchayat (Assistant Development Officer, Panchayat)</strong> — the block officer who supervises Gram Panchayat secretaries.",
-   "<strong>Census 2011</strong> — India's most recent completed national census; the source for village population figures. <a href=\"https://en.wikipedia.org/wiki/2011_census_of_India\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>Choropleth map</strong> — a map where areas are shaded by a value, here each GP by its rate. <a href=\"https://en.wikipedia.org/wiki/Choropleth_map\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>Salarpur Health Hotspot Maps</strong> — my public dashboards for diarrhoea, malaria and TB. <a href=\"https://ms221088.github.io/Salarpur_Budaun_Health_Maps/\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>KPI monitoring map</strong> — my GP-level dashboard of Aspirational Blocks indicators (see my KPI Focus Area case study). <a href=\"https://ms221088.github.io/Salarpur_KPI_maps/\" target=\"_blank\" rel=\"noopener\">Learn more</a>"
-  ]
- },
- {
-  "slug": "malaria",
-  "title": "Malaria Hotspots to Their Cause",
-  "fullTitle": "Mapping Malaria Hotspots to Their Physical Cause: A District-Contextualized, Village-Level Analysis for Salarpur Block, Budaun",
-  "subtitle": "From village-level case data to a specific, actionable water-source diagnosis for Salarpur Block, Budaun",
-  "card": "Village rankings pointed to 12 critical villages; field visits traced them to sewage-fed ponds choked with water hyacinth, which turned a hotspot list into a fixable recommendation.",
-  "methods": [
-   "Root-cause fieldwork",
-   "Ranking & clustering",
-   "Community dissemination"
-  ],
-  "when": "Data 2023–2025 · built 2026",
-  "cover": "img/malaria-1.jpg",
-  "live": [
-   "Open the live dashboard",
-   "https://ms221088.github.io/Salarpur_Budaun_Health_Maps/"
-  ],
-  "sections": [
-   {
-    "title": "Quick Summary",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "Salarpur block recorded 712 malaria cases between 2023 and 2025, in 69 of its 77 Gram Panchayats (GPs). Three years is all the data the District Malaria Officer's (DMO's) office had. When I ranked villages using the DMO's own village-level report, one stood out sharply: Ghatbeti (Ghat Behti on the map), at roughly double the rate of the next village. There was also a geographic pattern: the seven GPs of the Puthi Sarai Nyay Panchayat (a cluster of neighbouring GPs) together carry about 108 of the 712 cases, roughly 15% of the block's total. From the ranking I identified 12 critical villages for priority action, spread across several Nyay Panchayats. Field visits traced the pattern to a physical cause: large ponds fed by sewage and choked with water hyacinth, where mosquitoes breed in the still water. That gave a concrete recommendation: clean the ponds in the 12 villages during the Sanchari Rog Abhiyaan, Uttar Pradesh's communicable-disease control campaign. I built the map in the month before the campaign's April phase. The response so far is partial: anti-larval spraying has been done; fogging hasn't, because no fogging machines were available (they were being purchased in October, ahead of the October phase); pond restoration is planned but not done. Separately, I compared all 15 blocks of Budaun district: Salarpur ranks 5th by rate, and highest of Budaun's 6 Aspirational Blocks. That comparison is context only; it wasn't part of how I chose Salarpur or the 12 villages."
-     },
-     {
-      "k": "p",
-      "html": "Method: I analysed case counts by village and GP from the DMO office's malaria data (2023–2025), for Salarpur and, for comparison, for all 15 blocks of Budaun district. Populations use the same 2024 base year as my diarrhoea and TB dashboards. I cleaned the data and built the dashboard using Claude, an AI assistant, working from the DMO's raw village-level report."
-     },
-     {
-      "k": "p",
-      "html": "<a href=\"https://ms221088.github.io/Salarpur_Budaun_Health_Maps/\" target=\"_blank\" rel=\"noopener\">View the live dashboard: ms221088.github.io/Salarpur_Budaun_Health_Maps (Malaria tab)</a>"
-     },
-     {
-      "k": "img",
-      "src": "img/malaria-1.jpg",
-      "cap": "Malaria Surveillance Dashboard — rate per 10,000 by GP (712 cases, 2023–2025)",
-      "w": 1600,
-      "h": 1000
-     }
-    ]
-   },
-   {
-    "title": "End Users — Goals, Needs, Details",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "ul",
-      "items": [
-       "The malaria monitor in the DMO's office — supplied the raw village data, and needs the cleaned, ranked map back to plan spraying, fogging and surveillance.",
-       "Panchayati Raj department (the state department for village local government) — responsible for cleaning and restoring village ponds, the intervention the finding points to.",
-       "Rural Development department — responsible for the drainage and sewage flowing into the ponds.",
-       "WhatsApp groups of frontline workers, farmers and SHGs (Self-Help Groups, village women's savings groups) — to spread the finding in the community, beyond the usual official channels.",
-       "Sanchari Rog Abhiyaan planners — need a target list of critical villages before the campaign instead of blanket coverage.",
-       "Me — the analyst, presenting both the block-level and district-comparison findings."
-      ]
-     }
-    ]
-   },
-   {
-    "title": "Methodology",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "The malaria monitor in the DMO's office gave me village-level case data for Salarpur covering 2023–2025. That was the full span in the DMO's records, not a window I chose. I cleaned the village report and ranked villages by rate per population, then mapped the cases onto GP boundaries for the dashboard, using the same GP, village and hamlet lists I'd used to clean my diarrhoea and TB data. Separately, I built a district-wide comparison from a DMO summary report covering all 15 Budaun blocks (2023–2025), to see where Salarpur stands against the district and against Budaun's other 5 Aspirational Blocks. Both analyses use the same 2024 population base year as my other dashboards."
-     }
-    ]
-   },
-   {
-    "title": "Collected Data",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "ul",
-      "items": [
-       "Salarpur: 712 cases in 2023–2025 (716 in the DMO's district summary): 217 in 2023, 310 in 2024 and 185 in 2025. 69 of 77 GPs reported at least one case.",
-       "All 15 Budaun blocks: 7,798 cases in 2023–2025, a district rate of 3.22 per 1,000 people.",
-       "Salarpur's rate (3.57 per 1,000) ranks 5th of 15 blocks, after Samrer (9.47), Miyaun (6.34), Dataganj (5.88) and Jagat (3.99), and is the highest of Budaun's 6 Aspirational Blocks (the other 5 range from 0.57 to 2.8). This is context, not the reason I prioritised Salarpur.",
-       "Within Salarpur, Ghatbeti is the sharpest outlier, at roughly double the rate of the next village. The top-12 critical villages are spread across several Nyay Panchayats rather than one cluster.",
-       "A secondary pattern: the Puthi Sarai Nyay Panchayat (7 GPs: Faridpur Nausana, Ghat Behti, Bichhu Raiyya, Chandaura, Muhammadi, Puthi Sarai and Sadullapur Bhitara) carries about 108 of the 712 cases, about 15% of the block's total."
-      ]
-     }
-    ]
-   },
-   {
-    "title": "Synthesis",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "The village ranking within the block is what I actually used for targeting. It showed a sharp outlier (Ghatbeti) and a geographic cluster (the Puthi Sarai Nyay Panchayat, about 15% of cases), which together pointed to the 12 critical villages. I didn't hand this over as a bare list. I visited the top-ranked villages to find a physical cause first, so the departments responsible would know what to act on. The 15-block district comparison was a separate analysis that gave Salarpur's burden a wider frame; it ran alongside the targeting, not into it."
-     },
-     {
-      "k": "img",
-      "src": "img/malaria-2.jpg",
-      "cap": "Ghat Behti (34 cases, 247.1 per 10,000) and the surrounding Puthi Sarai Nyay Panchayat cluster",
-      "w": 790,
-      "h": 932
-     }
-    ]
-   },
-   {
-    "title": "Findings",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "ul",
-      "items": [
-       "Ghatbeti is a sharp outlier, at roughly double the rate of the next-highest village in the block.",
-       "Alongside it sits a cluster: the 7 GPs of the Puthi Sarai Nyay Panchayat together carry about 15% of the block's malaria. That's a real cluster effect, different from a single-village spike.",
-       "My field visits to the top-ranked villages traced the pattern to a physical cause: large ponds fed by sewage and choked with water hyacinth, where mosquitoes breed in still water. That's a mechanism, not just a statistical link.",
-       "The 12 critical villages are spread across several Nyay Panchayats, so pond cleaning has to be coordinated across several local bodies, not done in one area.",
-       "Separately, Salarpur ranks 5th of 15 Budaun blocks by rate and highest of the 6 Aspirational Blocks. That's useful context, but it wasn't part of how I prioritised Salarpur or the 12 villages."
-      ]
-     }
-    ]
-   },
-   {
-    "title": "Solution Space",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "Without field visits, I'd have handed departments a ranked hotspot list with no explanation, leaving them to guess the cause and the fix. Finding the mechanism, sewage-fed ponds choked with hyacinth, turned the list into a specific recommendation: clean these ponds, timed to the Sanchari Rog Abhiyaan. I also deliberately shared beyond the usual official channels (the malaria monitor, Panchayati Raj, Rural Development) to WhatsApp groups of frontline workers, farmers and SHGs, because stagnant ponds are something communities can report and act on themselves, not only something departments manage from above."
-     }
-    ]
-   },
-   {
-    "title": "Outcome",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "I shared the finding and the 12-village recommendation with the malaria monitor, Panchayati Raj, the Rural Development department and most of the frontline-worker, farmer and SHG WhatsApp groups, in the month before the campaign's April phase, as I did with my TB and diarrhoea dashboards. The response is real but partial. Anti-larval spraying has been done. Fogging hasn't, because fogging machines weren't available; they were being purchased in October for the campaign's October phase. Pond restoration, which tackles the root cause, is planned but not yet done."
-     }
-    ]
-   },
-   {
-    "title": "Impact on End Users & Administration",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "p",
-      "html": "Departments that would otherwise work from an unranked block total now have a prioritised village list linked to a cause. The district comparison places Salarpur's malaria burden against its real peer group, the other Aspirational Blocks, instead of leaving it as an isolated number. And because I shared it in community WhatsApp groups, the finding isn't only in the hands of officials who control spraying and fogging; the people living around the ponds can see it too."
-     }
-    ]
-   },
-   {
-    "title": "What I Learned",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "ul",
-      "items": [
-       "A village ranking can show two kinds of pattern at once: a single-village spike (Ghatbeti) and a wider cluster (the Puthi Sarai Nyay Panchayat). Both deserve naming separately, because they may need different responses.",
-       "A hotspot list is far more useful to departments once it's linked to a physical mechanism (sewage-fed, hyacinth-choked ponds). The same principle shaped my diarrhoea and tap-water analysis and the Sikrodi root-cause finding from my KPI monitoring map.",
-       "Recommendations made before a campaign don't get done on the campaign's timeline. Spraying, fogging and pond restoration are moving at different speeds depending on what each needs (staff time, buying equipment, coordination between departments). Reporting that honestly is more useful than treating \"shared\" as \"done\"."
-      ]
-     }
-    ]
-   },
-   {
-    "title": "Challenges & How I Overcame Them",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "ul",
-      "items": [
-       "The DMO's office had only 3 years of data (2023–2025). I worked within that limit; it was the data that existed, not a cleaning problem.",
-       "The 12 critical villages fall under several Nyay Panchayats, which makes coordinated action harder than a single clean-up. I shared the recommendation widely enough (Panchayati Raj, Rural Development and community WhatsApp groups) to reach each area instead of relying on one local body.",
-       "Fogging couldn't go ahead even though the recommendation was accepted, because there were no fogging machines. This isn't fully solved, but machines were being purchased in October for the October campaign phase."
-      ]
-     }
-    ]
-   },
-   {
-    "title": "What I Would Do Differently",
-    "level": 1,
-    "blocks": [
-     {
-      "k": "ul",
-      "items": [
-       "Ask the DMO's office for a longer data history, so I can analyse multi-year malaria trends as I can for TB and diarrhoea.",
-       "Check equipment needs (like fogging machines) as part of the recommendation itself, instead of discovering the gap after spraying had started.",
-       "Extend the district-wide, peer-group comparison (Aspirational Blocks against all 15 blocks) to my diarrhoea and TB dashboards, since it gave useful context for presenting the malaria finding."
-      ]
-     }
-    ]
-   }
-  ],
-  "glossary": [
-   "<strong>Gram Panchayat (GP)</strong> — an elected village council, the smallest unit of local government. Salarpur block has 77. <a href=\"https://en.wikipedia.org/wiki/Gram_panchayat\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>Nyay Panchayat</strong> — a cluster of neighbouring Gram Panchayats, used for administration.",
-   "<strong>Block (Vikas Khand)</strong> — the administrative level below a district. <a href=\"https://en.wikipedia.org/wiki/Community_development_block_in_India\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>Hamlet (majra)</strong> — a small settlement that belongs to a larger village or Gram Panchayat.",
-   "<strong>UP ABP+ (Uttar Pradesh Aspirational Blocks Programme)</strong> — the state programme, run by the Planning Department, that tracks 108 lagging blocks on 50 development indicators. <a href=\"https://epariyojana.up.gov.in/TABP/OrderGOs.aspx\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>Malaria</strong> — a disease spread by mosquitoes that breed in standing water. <a href=\"https://en.wikipedia.org/wiki/Malaria\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>DMO (District Malaria Officer)</strong> — the official who heads malaria control in the district; the malaria monitor works in this office.",
-   "<strong>Panchayati Raj department</strong> — the state department responsible for Gram Panchayats and village local government. <a href=\"https://en.wikipedia.org/wiki/Panchayati_raj_in_India\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>Rural Development department</strong> — the state department for rural works such as drainage and roads.",
-   "<strong>SHG (Self-Help Group)</strong> — a group of village women who save together and run small livelihoods, organised under the rural livelihoods mission. <a href=\"https://en.wikipedia.org/wiki/Self-help_group_(finance\" target=\"_blank\" rel=\"noopener\">Learn more</a>)",
-   "<strong>Sanchari Rog Abhiyaan</strong> — Uttar Pradesh's communicable-disease control campaign, run in phases through the year (including April and October).",
-   "<strong>Anti-larval spraying / fogging</strong> — killing mosquito larvae in standing water / spraying insecticide mist to kill adult mosquitoes.",
-   "<strong>Water hyacinth</strong> — a floating weed that covers ponds and keeps water still, which helps mosquitoes breed. <a href=\"https://en.wikipedia.org/wiki/Pontederia_crassipes\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>Census 2011</strong> — India's most recent completed national census; the source for village population figures. <a href=\"https://en.wikipedia.org/wiki/2011_census_of_India\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>Choropleth map</strong> — a map where areas are shaded by a value, here each GP by its rate. <a href=\"https://en.wikipedia.org/wiki/Choropleth_map\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>Salarpur Health Hotspot Maps</strong> — my public dashboards for diarrhoea, malaria and TB. <a href=\"https://ms221088.github.io/Salarpur_Budaun_Health_Maps/\" target=\"_blank\" rel=\"noopener\">Learn more</a>",
-   "<strong>KPI monitoring map</strong> — my GP-level dashboard of Aspirational Blocks indicators (see my KPI Focus Area case study). <a href=\"https://ms221088.github.io/Salarpur_KPI_maps/\" target=\"_blank\" rel=\"noopener\">Learn more</a>"
   ]
  }
 ];
