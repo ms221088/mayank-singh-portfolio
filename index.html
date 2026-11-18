@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+<title>Mayank Singh Portfolio</title>
+<meta name="description" content="UX research case studies from field work on public services in Salarpur block, Uttar Pradesh.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Devanagari:wght@400;600&display=swap">
+<style>
+/* Layout: a field notebook — one left-aligned reading column, project cards in a two-up grid, case pages with a section index in the margin. */
+:root{
+  --paper:#F5F6F8; --surface:#FFFFFF; --ink:#1A2340; --muted:#566079; --rule:#D9DEE8;
+  --accent:#B07A0C; --accent-soft:#F6EBD3; --link:#2B4BA8;
+  --display:"Young Serif", Georgia, "Times New Roman", serif;
+  --body:"Atkinson Hyperlegible", "Noto Sans Devanagari", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --deva:"Noto Sans Devanagari", var(--body);
+  --step-0:1.0625rem; --step-1:1.25rem; --step-2:1.6rem; --step-3:2.2rem; --step-4:clamp(2.2rem, 5vw, 3.4rem);
+  --col:42rem;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#11141D; --surface:#181C28; --ink:#E7E9F0; --muted:#9BA3B7; --rule:#2A3042;
+  --accent:#E2AA45; --accent-soft:#2C2616; --link:#93AEFF; color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --paper:#11141D; --surface:#181C28; --ink:#E7E9F0; --muted:#9BA3B7; --rule:#2A3042;
+  --accent:#E2AA45; --accent-soft:#2C2616; --link:#93AEFF; color-scheme:dark;}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:var(--step-0);line-height:1.6;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));}
+a{color:var(--link);text-underline-offset:.18em}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.15;text-wrap:balance;margin:0}
+p{margin:0}
+.wrap{max-width:72rem;margin:0 auto}
+.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* top bar */
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;padding-block:1.25rem;border-bottom:1px solid var(--rule)}
+.top .name{font-family:var(--display);font-size:1.15rem;color:var(--ink);text-decoration:none}
+.top nav{display:flex;gap:1.25rem;font-size:.95rem}
+.top nav a{color:var(--muted);text-decoration:none}
+.top nav a:hover,.top nav a[aria-current="page"]{color:var(--ink)}
+
+/* hero */
+.hero{padding-block:3.5rem 2.5rem;display:grid;grid-template-columns:minmax(0,1fr);gap:2rem;align-items:start}
+@media (min-width:62rem){.hero{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}}
+.hero-text{display:grid;gap:1.25rem;min-width:0}
+.hero-photo{margin:0;display:grid;gap:.5rem}
+.hero-photo img{width:100%;height:auto;border-radius:6px;border:1px solid var(--rule);display:block}
+.hero-photo figcaption{font-size:.85rem}
+.fw{max-width:52rem;padding-bottom:3rem;display:grid;gap:1.5rem}
+.fw-pics{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:1rem}
+.fw-pics figure{margin:0;display:grid;gap:.4rem;align-content:start}
+.fw-pics img{width:100%;height:auto;border-radius:6px;border:1px solid var(--rule);display:block}
+.fw > p{max-width:var(--col);font-size:1.05rem}
+.fw-cover{margin:0;display:grid;gap:.5rem}
+.lightbox{padding:0;border:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh}
+.lightbox::backdrop{background:rgba(10,12,20,.88)}
+.lb-scroll{width:100%;height:100%;overflow:auto;display:grid;place-items:start center;padding:3.5rem 1rem 2rem;box-sizing:border-box}
+.lb-scroll img{max-width:min(100%,1400px);height:auto;display:block;border-radius:4px;background:#fff}
+.lb-close{position:fixed;top:.75rem;right:1rem;width:2.5rem;height:2.5rem;border-radius:50%;border:0;background:#fff;color:#111;font-size:1.6rem;line-height:1;cursor:pointer;z-index:1}
+.press-note{color:var(--muted);font-size:.95rem;margin:-1.5rem 0 3rem}
+.fw-cover img{width:100%;height:auto;border-radius:6px;border:1px solid var(--rule);display:block}
+.more{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,24rem),1fr));gap:2rem;padding-bottom:3rem}
+.more article{display:grid;gap:.75rem;align-content:start}
+.more .pics{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,9rem),1fr));gap:.5rem}
+.more .pics img{width:100%;height:12rem;object-fit:cover;border-radius:6px;border:1px solid var(--rule);display:block}
+.more h3{font-size:var(--step-1)}
+.more p{color:var(--muted);font-size:1rem}
+.rstrip{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,9rem),1fr));gap:.5rem}
+.rstrip img{width:100%;height:13rem;object-fit:cover;border-radius:6px;border:1px solid var(--rule);display:block}
+.press{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,22rem),1fr));gap:1.5rem;padding-bottom:3rem}
+.clip{display:grid;grid-template-columns:7rem minmax(0,1fr);gap:1rem;align-items:start;text-decoration:none;color:inherit;padding:1rem;border:1px solid var(--rule);border-radius:6px;background:var(--surface)}
+.clip:hover{border-color:var(--accent)}
+.clip img{width:100%;height:auto;border:1px solid var(--rule);display:block}
+.clip h3{font-size:1.1rem;color:var(--ink)}
+.clip p{color:var(--muted);font-size:.95rem}
+.clip .src{font-family:var(--mono);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.clip > div{display:grid;gap:.4rem;min-width:0}
+.hero h1{font-size:var(--step-4)}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .lead{font-size:var(--step-1);color:var(--muted);max-width:var(--col)}
+.place{display:flex;flex-wrap:wrap;gap:.35rem 1rem;align-items:baseline;font-size:.95rem;color:var(--muted)}
+.place .deva{font-family:var(--deva)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));gap:1rem 2rem;margin-top:.75rem;padding-top:1.25rem;border-top:1px solid var(--rule)}
+.facts div{display:grid;gap:.15rem}
+.facts dt{font-family:var(--mono);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.facts dd{margin:0;font-size:1rem}
+
+/* work grid */
+.section-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;padding-block:2rem 1.25rem}
+.section-head h2{font-size:var(--step-2)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,21rem),1fr));gap:2.25rem 2rem;padding-bottom:3rem}
+.card{display:grid;gap:.85rem;text-decoration:none;color:inherit}
+.card .thumb{aspect-ratio:16/10;overflow:hidden;border-radius:6px;border:1px solid var(--rule);background:var(--surface);max-width:100%}
+.card .thumb img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform .35s ease}
+.card:hover .thumb img{transform:scale(1.025)}
+.card h3{font-size:var(--step-1);color:var(--ink)}
+.card:hover h3{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}
+.card p{color:var(--muted);font-size:1rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;margin:0;padding:0}
+.tags li{font-family:var(--mono);font-size:.72rem;letter-spacing:.03em;padding:.2rem .5rem;border-radius:3px;background:var(--accent-soft);color:var(--ink)}
+.card .when{font-family:var(--mono);font-size:.75rem;color:var(--muted)}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,1fr);gap:2rem;padding-block:2.5rem 4rem;border-top:1px solid var(--rule)}
+@media (min-width:56rem){.about{grid-template-columns:14rem minmax(0,1fr)}}
+.about .body{display:grid;gap:1rem;max-width:var(--col)}
+.about h2{font-size:var(--step-2)}
+.about h3{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:.75rem}
+
+/* case page */
+.case-head{padding-block:2.5rem 2rem;display:grid;gap:1rem;max-width:52rem}
+.back{font-size:.95rem;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--ink)}
+.case-head h1{font-size:var(--step-4)}
+.case-head .sub{font-size:var(--step-1);color:var(--muted);max-width:var(--col)}
+.meta{display:flex;flex-wrap:wrap;gap:.75rem 2rem;align-items:center;font-size:.95rem;padding-top:1rem;border-top:1px solid var(--rule)}
+.meta .k{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);display:block}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem .9rem;border-radius:4px;background:var(--ink);color:var(--paper);text-decoration:none;font-size:.95rem}
+.btn:hover{opacity:.9}
+.case-body{display:grid;grid-template-columns:minmax(0,1fr);gap:2.5rem;padding-bottom:4rem}
+@media (min-width:62rem){.case-body{grid-template-columns:13rem minmax(0,1fr)}}
+.toc{display:none}
+@media (min-width:62rem){.toc{display:block;position:sticky;top:calc(env(safe-area-inset-top, 0px) + 1.5rem);align-self:start;max-height:calc(100vh - 3rem);overflow:auto}}
+.toc ol{list-style:none;margin:0;padding:0;display:grid;gap:.45rem;font-size:.88rem}
+.toc a{color:var(--muted);text-decoration:none}
+.toc a:hover{color:var(--ink)}
+.toc .eyebrow{display:block;margin-bottom:.75rem}
+article{display:grid;gap:2.75rem;min-width:0}
+article section{display:grid;gap:1rem;max-width:var(--col);scroll-margin-top:1.5rem}
+article section.wide{max-width:none}
+article section.wide > :not(figure){max-width:var(--col)}
+article h2{font-size:var(--step-2)}
+article h3{font-size:var(--step-1)}
+article section.sub-sec{padding-left:1rem;border-left:2px solid var(--accent)}
+article section.summary p{font-size:var(--step-1);line-height:1.55}
+article ul{margin:0;padding-left:1.2rem;display:grid;gap:.6rem}
+article li::marker{color:var(--accent)}
+figure{margin:.5rem 0 0;display:grid;gap:.6rem;max-width:min(100%, 58rem)}
+figure.narrow{max-width:min(100%, 30rem)}
+figure a{display:block;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:var(--surface)}
+figure img{display:block;width:100%;height:auto}
+figcaption{font-size:.9rem;color:var(--muted);max-width:var(--col)}
+details.glossary{border-top:1px solid var(--rule);padding-top:1.25rem;max-width:var(--col)}
+details.glossary summary{cursor:pointer;font-family:var(--display);font-size:var(--step-2)}
+details.glossary summary span{font-family:var(--body);font-size:1rem;color:var(--muted)}
+details.glossary ul{list-style:none;padding:0;margin-top:1.25rem;display:grid;gap:.75rem;font-size:.98rem}
+.pager{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:1rem;border-top:1px solid var(--rule);padding-top:1.5rem}
+.pager a{display:grid;gap:.2rem;text-decoration:none;color:var(--ink);padding:1rem;border:1px solid var(--rule);border-radius:6px;background:var(--surface)}
+.pager a:hover{border-color:var(--accent)}
+.pager a.next{text-align:right}
+footer{border-top:1px solid var(--rule);padding-block:1.5rem 2.5rem;color:var(--muted);font-size:.9rem;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;justify-content:space-between}
+.term{font-style:italic}
+a.term{text-decoration-style:dotted;text-decoration-thickness:1px}
+.gl{color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <a class="name" href="#">Mayank Singh</a>
+    <nav aria-label="Main">
+      <a href="#" data-nav="home">Work</a>
+      <a href="#about" data-nav="about">About</a>
+    </nav>
+  </header>
+  <main id="app"></main>
+  <footer>
+    <span>Mayank Singh · UX research in public services</span>
+    <span>Live tools on <a href="https://ms221088.github.io/Salarpur_KPI_maps/" target="_blank" rel="noopener">GitHub Pages</a></span>
+  </footer>
+</div>
+
+<script src="case-studies.js"></script>
+<script>
+(function(){
+  var S = window.CASE_STUDIES || [];
+  var app = document.getElementById('app');
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function slugify(s){return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
+
+  function home(){
+    var cards = S.map(function(c){
+      return '<a class="card" href="#'+c.slug+'">'+
+        '<div class="thumb"><img src="'+c.cover+'" alt="" loading="lazy"></div>'+
+        '<ul class="tags">'+c.methods.map(function(m){return '<li>'+esc(m)+'</li>';}).join('')+'</ul>'+
+        '<h3>'+esc(c.title)+'</h3><p>'+esc(c.card)+'</p><span class="when">'+esc(c.when)+'</span></a>';
+    }).join('');
+    return ''+
+    '<section class="hero"><div class="hero-text">'+
+      '<p class="eyebrow">UX research · public services · rural India</p>'+
+      '<h1>I study how public services <em>actually reach</em> people in villages, and build tools that help officials act on it.</h1>'+
+      '<p class="lead">For the past four years I have worked as a Chief Minister’s Research Fellow in an aspirational block in Uttar Pradesh: interviewing families in their homes, turning messy government data into maps, and getting departments to act on what both reveal.</p>'+
+      '<p class="place"><span>Salarpur block, Budaun, Uttar Pradesh</span><span class="deva" lang="hi">विकास खण्ड सालारपुर, बदायूँ</span></p>'+
+      '<dl class="facts">'+
+        '<div><dt>Field</dt><dd>77 Gram Panchayats, monitored since Aug 2023</dd></div>'+
+        '<div><dt>Methods</dt><dd>Household interviews, observation, data analysis, mapping, visual communication</dd></div>'+
+        '<div><dt>Before this</dt><dd>Nearly six years as a software engineer</dd></div>'+
+      '</dl>'+
+    '</div><figure class="hero-photo"><img src="img/field-hero.jpg" width="1400" height="1050" alt="Mayank sits on a plastic chair with a notebook, interviewing a woman seated on a charpai in her courtyard"><figcaption>Interviewing a mother in her courtyard during a monitoring visit in Salarpur</figcaption></figure>'+
+    '</section>'+
+    '<div class="section-head"><h2>Case studies</h2><span class="eyebrow">'+S.length+' projects</span></div>'+
+    '<div class="grid">'+cards+'</div>'+
+    more()+
+    press()+
+    about();
+  }
+
+  var MORE = [
+    {slug:'pichhwai', card:'A four-panel folk-art poster on deworming and vaccinating cattle, printed for the block veterinary hospital.'},
+    {slug:'inclusion', card:'Reaching a transgender household in Binawar through a trusted ASHA worker, then surveying their needs and turning the gaps into a department-wise action report.'},
+    {slug:'bhil', card:'Bhil dot-painting workshops for 23 girls, on themes linked to what they study and see around them.'},
+    {slug:'book-cover', card:'A painted cover for a Hindi novel on the abandonment of newborn girls, published by Hans Prakashan.'},
+    {slug:'ddugky', card:'Getting the first young people from Salarpur into government computer training.'},
+    {slug:'videos', card:'Short Hindi health videos on TB, screening and early pregnancy registration, shared on official WhatsApp groups.'}
+  ];
+  MORE[0].title = "Livestock health poster in Pichhwai style";
+  MORE[0].pics = [{"src": "img/more-pichhwai.jpg", "alt": "Pichhwai-style painting in four panels showing a weak cow with worms, treatment, a healthy cow and vaccination"}, {"src": "img/more-pichhwai-wall.jpg", "alt": "The printed poster on the wall of the block veterinary hospital"}];
+  MORE[0].body = 'I painted a four-panel Pichhwai-style poster showing why cattle need deworming and vaccination against foot-and-mouth disease: a weak cow with worms, treatment by a para-vet, a healthy cow giving more milk, and vaccination. It was shared on block and district WhatsApp groups, and printed under the National Animal Disease Control Programme with the hospital\u2019s details for two walls of the Salarpur block veterinary hospital.';
+  MORE[1].title = "Health access for transgender residents";
+  MORE[1].pics = [{"src": "img/more-inclusion.jpg", "alt": "Mayank with the Guru and two others outside a house in Binawar", "cap": "With the Guru and her family in Binawar"}, {"src": "img/more-inclusion-chc.jpg", "alt": "Screening at the Community Health Centre, with health staff at a desk", "cap": "Screening at the Community Health Centre"}];
+  MORE[1].body = 'Through an ASHA worker, whose husband came with me, I met the Guru of a transgender household in Binawar and her three disciples, and talked with them about free screening for diabetes and high blood pressure, and about TB. Two of the four were screened: one disciple at the Community Health Centre and the Guru at a village camp; another declined. I also suggested updating their Aadhaar ID, which unlocks welfare schemes, and the Guru completed hers. A small start, which showed me how much a trusted go-between matters.<br><br>In October 2025 I went back with a structured questionnaire, household and individual, for all four members. None had a ration card, an Ayushman health card or any insurance; two had no bank account and two had never heard of TB; the household had no home or land of its own, and tap water had not reached them although the pipeline was laid. Almost every scheme turned out to depend on one missing document, the transgender certificate. From this I wrote a Hindi action report for the Chief Development Officer, assigning each gap to a department and asking for one joint camp at their home, arranged by phone with the Guru, because the household travels for work. Housing and land are to be offered only after asking them where they want to live. Photos shared with consent.';
+  MORE[2].title = "Bhil art workshops for girls";
+  MORE[2].pics = [{"src": "img/more-bhil-1.jpg", "alt": "Bhil-style dot painting of a man beside a cow with a first-aid box, on the theme of cattle vaccination"}, {"src": "img/more-bhil-2.jpg", "alt": "Bhil-style dot painting of a village hut and a woman carrying a basket"}, {"src": "img/more-bhil-3.jpg", "alt": "Bhil-style dot painting of Krishna with a cow and a peacock"}];
+  MORE[2].body = 'I ran workshops in Bhil painting, a dot-based tribal art from central India, for 7 girls at the Baratekadar village council office (May 2023) and 16 girls at the Kasturba Gandhi residential girls’ school in Mongar (February 2024). Dot painting is easy for children to pick up, and I gave them themes that connect art with what they study and see around them, such as cattle vaccination, village life, ponds as habitats and religion. Shown here: paintings from the workshops.';
+  MORE[3].title = "Book cover: <i lang=\"hi-Latn\">Paai Hui Ladki</i>";
+  MORE[3].pics = [{"src": "img/more-cover-art.jpg", "alt": "Painting of a newborn girl abandoned by a roadside bin; a man reaches for her while three women look on in shock"}, {"src": "img/more-cover-launch.jpg", "alt": "Guests on stage at the seminar in Pokhara holding up prints of the book cover"}];
+  MORE[3].body = 'I painted the cover for <i lang="hi-Latn">Paai Hui Ladki</i> (“The Found Girl”), a Hindi novel by Dr. Monika Devi, a fellow CM Fellow in Kotwali block, Bijnor, about the abandonment of newborn girls. It connects to the sex-ratio indicator and the <i lang="hi-Latn">Beti Bachao Beti Padhao</i> (“Save the daughter, educate the daughter”) scheme. A man reaches for an abandoned baby by a roadside bin, three women look on in shock, and the traffic moves past. Hans Prakashan, New Delhi accepted the book, and the cover was launched at an international seminar in Pokhara, Nepal, on 12–13 June 2026. A Hindi newspaper report on the launch said the cover “tells a story in itself.”';
+  MORE[4].title = "Getting rural youth into skills training";
+  MORE[4].pics = [{"src": "img/more-ddugky.jpg", "alt": "A mobilisation camp for skills training, with young people seated in front of a banner"}];
+  MORE[4].body = 'No one from Salarpur had enrolled in the government’s DDU-GKY computer training (data entry operator), and the few who signed up dropped out. I spread the word through job fairs, mobilisation camps in several village councils, block WhatsApp groups and community resource persons. Six young people, one of them a woman, enrolled. The training partners had tied up with employers, such as e-Ashram Infotech, for on-the-job training and placement.';
+  MORE[5].title = "Short health awareness videos";
+  MORE[5].pics = [{"src": "img/more-videos.jpg", "alt": "Mayank explaining the framed Madhubani embroidery to camera outside a school"}];
+  MORE[5].body = 'I made short Hindi videos with online tools such as InVideo AI, posted them on YouTube and shared them on official WhatsApp groups: on spotting TB symptoms and getting treated early, on why people over 30 should get screened for diabetes and blood pressure, on registering a pregnancy in the first trimester, where I present the Madhubani embroidery at the science exhibition, and one promoting an SHG member\u2019s drone-spraying service to farmers. '+
+      'Watch: <a href="https://www.youtube.com/watch?v=fhE7eevq9Ls" target="_blank" rel="noopener">TB symptoms</a> · <a href="https://www.youtube.com/watch?v=se7djhqM8rY" target="_blank" rel="noopener">Early pregnancy registration (embroidery)</a> · <a href="https://www.youtube.com/shorts/t3c3WgKuU1c" target="_blank" rel="noopener">Diabetes and blood-pressure screening</a> · <a href="https://www.youtube.com/shorts/683jaj1h1Po" target="_blank" rel="noopener">NaMo Drone Didi spraying service</a> · <a href="https://www.youtube.com/@2331047/shorts" target="_blank" rel="noopener">All videos</a>';
+  MORE[3].pics[0].cap = 'The cover painting'; MORE[3].pics[1].cap = 'Cover launch at the seminar in Pokhara, Nepal';
+  MORE[3].extra = {btn:'<a class="btn" href="#work-book-cover" data-jump="hans-cover">See the Hans Prakashan cover ↓</a>',
+    html:'<figure id="hans-cover" class="fw-cover"><img src="img/more-cover-hires.jpg" alt="The full print-ready cover from Hans Prakashan, New Delhi: back, spine and front" loading="lazy"><figcaption>Print-ready cover from Hans Prakashan, New Delhi (back, spine and front). <a href="#work-book-cover" class="dl-link" data-dl="docs/paai-hui-ladki-cover-hans-prakashan.pdf" data-name="Paai_Hui_Ladki_cover_Hans_Prakashan.pdf" hidden>Download the PDF (2.7 MB)</a><span class="dl-msg" role="status"></span></figcaption></figure>'};
+  MORE.forEach(function(m){ m.slug = 'work-'+m.slug; });
+
+  function more(){
+    return '<div class="section-head"><h2>More field work</h2><span class="eyebrow">Smaller projects</span></div><div class="grid">'+
+      MORE.map(function(m){
+        return '<a class="card" href="#'+m.slug+'"><div class="thumb"><img src="'+m.pics[0].src+'" alt="" loading="lazy"></div>'+
+          '<h3>'+m.title+'</h3><p>'+esc(m.card)+'</p></a>';
+      }).join('')+'</div>';
+  }
+
+  function morePage(m){
+    var i = MORE.indexOf(m), prev = MORE[(i-1+MORE.length)%MORE.length], next = MORE[(i+1)%MORE.length];
+    var strip = function(t){ return t.replace(/<[^>]+>/g,''); };
+    return '<header class="case-head"><a class="back" href="#">← All work</a><span class="eyebrow">More field work</span><h1>'+m.title+'</h1>'+
+      '<div class="meta"><div><span class="k">Place</span>Salarpur block, Budaun</div>'+(m.extra?m.extra.btn:'')+'</div></header>'+
+      '<div class="fw"><div class="fw-pics">'+m.pics.map(function(p){
+        return '<figure><a href="'+p.src+'" target="_blank" rel="noopener" aria-label="Open image full size"><img src="'+p.src+'" alt="'+esc(p.alt)+'" loading="lazy"></a>'+(p.cap?'<figcaption>'+esc(p.cap)+'</figcaption>':'')+'</figure>';
+      }).join('')+'</div>'+
+      '<p>'+m.body+'</p>'+(m.extra?m.extra.html:'')+
+      '<nav class="pager" aria-label="More field work"><a href="#'+prev.slug+'"><span class="eyebrow">Previous</span><span>'+strip(prev.title)+'</span></a>'+
+      '<a class="next" href="#'+next.slug+'"><span class="eyebrow">Next</span><span>'+strip(next.title)+'</span></a></nav></div>';
+  }
+
+  function press(){
+    var P = [
+      {img:'img/press-toi-delhi.jpg', src:'The Times of India, New Delhi · 15 Jan 2026', h:"A mission in UP's poorest blocks: Take welfare to every doorstep", t:'Featured among the CM Fellows: my work identifying people with TB in Salarpur.', url:'img/press-toi-delhi-full.jpg'},
+      {img:'img/press-toi-lucknow.jpg', src:'Sunday Times of India, Lucknow · 18 Jan 2026', h:'Blockbuster plan to meet aspirations', t:'Profiled in "CM Fellows on the job" for my work on TB in Salarpur and my awareness posters and banners.', url:'img/press-toi-lucknow.jpg'}
+    ];
+    return '<div class="section-head"><h2>In the press</h2></div><div class="press">'+P.map(function(c){
+      return '<a class="clip" href="'+c.url+'" target="_blank" rel="noopener"><img src="'+c.img+'" alt="" loading="lazy"><div><span class="src">'+esc(c.src)+'</span><h3>'+esc(c.h)+'</h3><p>'+esc(c.t)+'</p></div></a>';
+    }).join('')+'</div><p class="press-note">Click a clipping to read it in full. The New Delhi article is also online on <a href="https://timesofindia.indiatimes.com/toi-plus/education/a-mission-in-ups-poorest-blocks-take-welfare-to-every-doorstep/articleshow/126544241.cms" target="_blank" rel="noopener">TOI+</a> (subscription needed).</p>';
+  }
+
+  function about(){
+    return '<section class="about" id="about-sec">'+
+      '<h2>About</h2>'+
+      '<div class="body">'+
+        '<p>I am a Chief Minister’s Research Fellow under the CM Fellowship Programme of Uttar Pradesh’s Planning Department, posted in Salarpur block since November 2022. Fellows are placed in aspirational blocks to support evidence-based planning and monitoring.</p>'+
+        '<p>Salarpur is one of 108 blocks in <a href="https://epariyojana.up.gov.in/TABP/OrderGOs.aspx" target="_blank" rel="noopener">UP ABP+</a>, the state’s Aspirational Blocks Programme, which tracks its most lagging blocks on 50 indicators across health and nutrition, education, agriculture, basic infrastructure and social development. The block covers about 246 sq km, with roughly 2 lakh (200,000) mostly rural people across 77 Gram Panchayats (village councils).</p>'+
+        '<p>My work sits between people and systems. I make random-sample household visits, asking mothers about antenatal care, nutrition, water, sanitation and more; I analyse the block’s data; and I build maps, dashboards and awareness material that health workers, block officials and NGOs use to decide where to act.</p>'+
+        '<h3>How I research</h3>'+
+        '<p>On each monitoring visit I pick a household at random, usually a mother whose youngest child is under two, and ask a fixed set of questions on pregnancy care, nutrition, water, sanitation, housing, TB, screening and livestock, writing the answers by hand. At Anganwadi centres I check that children are weighed and measured correctly. I conduct this research in Hindi and English, and the patterns I hear in homes are what most of my projects start from.</p>'+
+        '<div class="rstrip"><img src="img/research-r1.jpg" alt="Taking notes while a grandmother holding a newborn answers questions" loading="lazy"><img src="img/research-r2.jpg" alt="A group interview with women seated under a tree" loading="lazy"><img src="img/research-r3.jpg" alt="Interviewing a woman seated in her doorway" loading="lazy"><img src="img/research-r4.jpg" alt="Checking a child\u2019s height at an Anganwadi centre" loading="lazy"></div>'+
+        '<h3>Background</h3>'+
+        '<p>Before the fellowship I spent nearly six years as a software engineer at Cognizant. I hold a B.Tech in Computer Science and Engineering from Integral University, Lucknow, and an M.Tech in Software Engineering from BITS Pilani, which I completed while working at Cognizant through its work-integrated programme. I also paint, and folk styles such as Madhubani, Warli and Pichhwai often find their way into my awareness work.</p>'+
+        '<h3>How I use AI</h3>'+
+        '<p>I use Claude, an AI assistant, for data cleaning and for building web pages. The questions, field findings and judgment calls are mine; each case study says where AI helped.</p>'+
+      '</div></section>';
+  }
+
+  function block(b){
+    if(b.k==='p') return '<p>'+b.html+'</p>';
+    if(b.k==='ul') return '<ul>'+b.items.map(function(i){return '<li>'+i+'</li>';}).join('')+'</ul>';
+    if(b.k==='img'){
+      var narrow = (b.w/b.h) < 1.15 || b.w < 900;
+      return '<figure'+(narrow?' class="narrow"':'')+'><a href="'+b.src+'" target="_blank" rel="noopener" aria-label="Open image full size">'+
+        '<img src="'+b.src+'" width="'+b.w+'" height="'+b.h+'" alt="'+esc(b.cap||'')+'" loading="lazy"></a>'+
+        (b.cap?'<figcaption>'+esc(b.cap)+'</figcaption>':'')+'</figure>';
+    }
+    return '';
+  }
+
+  function casePage(c){
+    var i = S.indexOf(c), prev = S[(i-1+S.length)%S.length], next = S[(i+1)%S.length];
+    var toc = [], secs = c.sections.map(function(s, n){
+      var title = s.title === 'Quick Summary' ? 'Summary' : s.title;
+      var id = c.slug+'-'+slugify(title);
+      if(s.level!==2) toc.push('<li><a href="#'+c.slug+'" data-jump="'+id+'">'+esc(title)+'</a></li>');
+      var hasImg = s.blocks.some(function(b){return b.k==='img';});
+      var cls = [n===0?'summary':'', s.level===2?'sub-sec':'', hasImg?'wide':''].join(' ').trim();
+      var h = s.level===2 ? '<h3>'+esc(title)+'</h3>' : '<h2>'+esc(title)+'</h2>';
+      return '<section id="'+id+'" class="'+cls+'">'+h+s.blocks.map(block).join('')+'</section>';
+    }).join('');
+    var gl = c.glossary && c.glossary.length ? '<details class="glossary"><summary>Glossary <span>— '+c.glossary.length+' terms and abbreviations</span></summary><ul>'+
+      c.glossary.map(function(g){return '<li>'+g+'</li>';}).join('')+'</ul></details>' : '';
+    return ''+
+    '<header class="case-head">'+
+      '<a class="back" href="#">← All case studies</a>'+
+      '<ul class="tags">'+c.methods.map(function(m){return '<li>'+esc(m)+'</li>';}).join('')+'</ul>'+
+      '<h1>'+esc(c.title)+'</h1>'+
+      '<p class="sub">'+esc(c.fullTitle)+'</p>'+
+      '<div class="meta">'+
+        '<div><span class="k">Role</span>Researcher, analyst and builder</div>'+
+        '<div><span class="k">Timeline</span>'+esc(c.when)+'</div>'+
+        '<div><span class="k">Place</span>Salarpur block, Budaun</div>'+
+        (c.live?'<a class="btn" href="'+c.live[1]+'" target="_blank" rel="noopener">'+esc(c.live[0])+' ↗</a>':'')+
+      '</div>'+
+    '</header>'+
+    '<div class="case-body">'+
+      '<nav class="toc" aria-label="Sections"><span class="eyebrow">On this page</span><ol>'+toc.join('')+'</ol></nav>'+
+      '<article>'+secs+gl+
+        '<nav class="pager" aria-label="More case studies">'+
+          '<a href="#'+prev.slug+'"><span class="eyebrow">Previous</span>'+esc(prev.title)+'</a>'+
+          '<a class="next" href="#'+next.slug+'"><span class="eyebrow">Next</span>'+esc(next.title)+'</a>'+
+        '</nav>'+
+      '</article>'+
+    '</div>';
+  }
+
+  function route(){
+    var h = (location.hash||'').replace('#','');
+    var c = S.filter(function(x){return x.slug===h;})[0];
+    var mw = MORE.filter(function(x){return x.slug===h;})[0];
+    document.querySelectorAll('[data-nav]').forEach(function(a){a.removeAttribute('aria-current');});
+    if(mw){
+      app.innerHTML = morePage(mw);
+      document.title = mw.title.replace(/<[^>]+>/g,'') + ' — Mayank Singh';
+      window.scrollTo(0,0);
+    } else if(c){
+      app.innerHTML = casePage(c);
+      document.title = c.title + ' — Mayank Singh';
+      window.scrollTo(0,0);
+    } else {
+      app.innerHTML = home();
+      document.title = 'Mayank Singh Portfolio';
+      var nav = document.querySelector('[data-nav="'+(h==='about'?'about':'home')+'"]');
+      if(nav) nav.setAttribute('aria-current','page');
+      if(h==='about'){ var a=document.getElementById('about-sec'); if(a) a.scrollIntoView(); }
+      else window.scrollTo(0,0);
+    }
+  }
+  var DL = null;
+  try { if(window.claude && window.claude.use) window.claude.use('downloads').then(function(d){ DL = d; showDl(); }).catch(function(){}); } catch(e){}
+  var INCLAUDE = !!(window.claude && window.claude.use);
+  function showDl(){ document.querySelectorAll('.dl-link').forEach(function(a){
+    if(DL){ a.hidden = false; }
+    else if(!INCLAUDE && a.getAttribute('data-dl')){ a.hidden = false; a.href = a.getAttribute('data-dl'); a.setAttribute('download', a.getAttribute('data-name')); a.removeAttribute('data-dl'); }
+  }); }
+  new MutationObserver(showDl).observe(app, {childList:true});
+  var LB = document.createElement('dialog'); LB.className = 'lightbox';
+  LB.innerHTML = '<button type="button" class="lb-close" aria-label="Close">×</button><div class="lb-scroll"><img alt=""></div>';
+  document.body.appendChild(LB);
+  LB.addEventListener('click', function(e){ if(e.target === LB || e.target.closest('.lb-close')) LB.close(); });
+  app.addEventListener('click', function(e){
+    var im = e.target.closest('a[href^="img/"]');
+    if(im){ e.preventDefault(); var i = LB.querySelector('img'); i.src = im.getAttribute('href');
+      var src = im.querySelector('img'); i.alt = src ? src.alt : ''; LB.showModal(); LB.querySelector('.lb-scroll').scrollTop = 0; return; }
+    var d = e.target.closest('[data-dl]');
+    if(d && DL){ e.preventDefault(); var msg = d.parentNode.querySelector('.dl-msg');
+      fetch(d.getAttribute('data-dl')).then(function(r){ return r.blob(); })
+        .then(function(b){ return DL.save({filename: d.getAttribute('data-name'), data: b}); })
+        .then(function(){ if(msg) msg.textContent = ' Saved.'; })
+        .catch(function(err){ if(msg) msg.textContent = (err && err.code === 'declined') ? '' : ' The download is not available here.'; });
+      return; }
+    var j = e.target.closest('[data-jump]');
+    if(j){ e.preventDefault(); var t=document.getElementById(j.getAttribute('data-jump')); if(t) t.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}); }
+  });
+  /* Hindi and local terms: italicised everywhere; first mention on a page gets a reference link and an English gloss. */
+  var W = 'https://en.wikipedia.org/wiki/';
+  var TERMS = [
+    ['Salarpur Nigrani Darpan', 'Salarpur monitoring mirror', 'https://ms221088.github.io/Salarpur_KPI_maps/'],
+    ['Nigrani Darpan', 'monitoring mirror', 'https://ms221088.github.io/Salarpur_KPI_maps/'],
+    ['Salarpur', 'in Budaun district, Uttar Pradesh', 'https://www.openstreetmap.org/search?query=Salarpur%2C%20Budaun'],
+    ['Budaun', 'in western Uttar Pradesh', W+'Budaun_district'],
+    ['Uttar Pradesh', "India's most populous state", W+'Uttar_Pradesh'],
+    ['Vikas Khand', 'development block', W+'Community_development_block_in_India'],
+    ['Gram Panchayat', 'elected village council', W+'Gram_panchayat', 'elected village councils'],
+    ['Nyay Panchayat', 'a cluster of village councils', null, 'clusters of village councils'],
+    ['Nagar Panchayat', 'small-town council', W+'Nagar_panchayat'],
+    ['Panchayati Raj', 'village self-government', W+'Panchayati_raj_in_India'],
+    ['NITI Aayog', "the Government of India's policy think tank", W+'NITI_Aayog'],
+    ['Jal Jeevan Mission', 'national piped-water mission', 'https://jaljeevanmission.gov.in/'],
+    ['Jal Nigam', 'state water-supply agency', null],
+    ['Sanchari Rog Abhiyaan', 'communicable-disease campaign', null],
+    ['Sampoornata Abhiyaan', 'full-coverage campaign', null],
+    ['Nikshay Mitra', 'TB patient supporter', 'https://www.nikshay.in/'],
+    ['Nikshay', 'national TB patient portal', 'https://www.nikshay.in/'],
+    ['Poshan Potli', 'nutrition kit', null],
+    ['Poshan Tracker', 'national child-nutrition app', 'https://poshantracker.in/'],
+    ['e-Kavach', "Uttar Pradesh's health data portal", null],
+    ['Anganwadi Centre', 'village childcare and nutrition centre', W+'Anganwadi', 'village childcare and nutrition centres'],
+    ['Anganwadi', 'village childcare centre', W+'Anganwadi'],
+    ['Ayushman Arogya Shivir', 'government health camp', null],
+    ['Ayushman Arogya Mandir', 'village health and wellness centre', W+'Ayushman_Bharat_Yojana'],
+    ['Madhubani', 'folk painting from the Mithila region of Bihar', W+'Madhubani_art'],
+    ['Cheriyal', 'scroll-painting tradition from Telangana', W+'Cheriyal_scroll_painting'],
+    ['Gau Sanrakshan evam Samvardhan Nidhi', 'cow protection and development fund', null],
+    ['Gaushala', 'cow shelter', W+'Gaushala'],
+    ['Vikas Bhawan', 'district development office', null],
+    ['Binawar', 'a village council in Salarpur block', null],
+    ['Bhil', 'a tribal community of central India', W+'Bhil_painting'],
+    ['Jagrukta bhi, Aajeevika bhi', 'awareness and livelihood too', null],
+    ['Aadhaar', "India's national ID number", W+'Aadhaar'],
+    ['Gram Sachivalaya', 'village council office', null],
+    ['Ujhani', 'another block in Budaun district', null],
+    ['Mithila', 'a cultural region of Bihar and Nepal', W+'Mithila_(region)'],
+    ['Warli', 'tribal painting style from Maharashtra', W+'Warli_painting'],
+    ['Pichhwai', 'devotional cloth painting from Rajasthan', W+'Pichhwai'],
+    ['Sanjhi', 'clay relief art made on walls', W+'Sanjhi'],
+    ['Navratri', 'nine-night Hindu festival', W+'Navaratri'],
+    ['Zari-Zardozi', 'metallic-thread embroidery', W+'Zardozi'],
+    ['Aari', 'hooked-needle embroidery stitch', null],
+    ['Rozgar Sewak', 'village assistant for the rural jobs scheme', null, 'village assistants for the rural jobs scheme'],
+    ['Panchayat Sahayak', 'village council office assistant', null, 'village council office assistants'],
+    ['Safai Karamchari', 'village sanitation worker', null, 'village sanitation workers'],
+    ['Sachiv', 'village council secretary', null, 'village council secretaries'],
+    ['Pradhan', 'elected village head', null, 'elected village heads'],
+    ['maayka', "a married woman's parents' home", null],
+    ['nazar', 'the evil eye', W+'Evil_eye'],
+    ['munaadi', 'drum-beat public announcement', null],
+    ['dai', 'traditional birth attendant', W+'Traditional_birth_attendant', 'traditional birth attendants'],
+    ['lakh', '100,000', W+'Lakh']
+  ];
+  var TRE = new RegExp('(' + TERMS.map(function(t){return t[0].replace(/[-.*+?^${}()|[\]\\]/g,'\\$&');}).join('|') + ')(s?)(?![\\w-])', 'g');
+  var TMAP = {}; TERMS.forEach(function(t){TMAP[t[0]] = t;});
+  function annotate(root){
+    var done = {};
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {acceptNode:function(n){
+      var p = n.parentElement;
+      if(!p || p.closest('script,style,details.glossary,.term,.deva,figcaption a')) return NodeFilter.FILTER_REJECT;
+      TRE.lastIndex = 0;
+      return TRE.test(n.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+    }});
+    var nodes = []; while(walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function(n){
+      var p = n.parentElement;
+      var short = !!p.closest('h1,h2,h3,.tags,.toc,.pager,.top,.when,.k');
+      var inLink = !!p.closest('a');
+      var text = n.nodeValue, frag = document.createDocumentFragment(), last = 0, m;
+      TRE.lastIndex = 0;
+      while((m = TRE.exec(text))){
+        var before = text.slice(last, m.index);
+        if(before) frag.appendChild(document.createTextNode(before));
+        var t = TMAP[m[1]], word = m[1] + m[2];
+        var prevChar = text.charAt(m.index - 1);
+        if(/[\w-]/.test(prevChar)){ frag.appendChild(document.createTextNode(word)); last = TRE.lastIndex; continue; }
+        var first = !short && !done[t[0]];
+        var el;
+        if(first && t[2] && !inLink){ el = document.createElement('a'); el.href = t[2]; el.target = '_blank'; el.rel = 'noopener'; }
+        else el = document.createElement('i');
+        el.className = 'term'; el.lang = 'hi-Latn'; el.textContent = word;
+        frag.appendChild(el);
+        if(first){
+          done[t[0]] = true;
+          var after = text.slice(TRE.lastIndex);
+          var nextEl = n.nextSibling;
+          var alreadyGlossed = /^\s*\(/.test(after) || (!after.trim() && nextEl && nextEl.textContent && /^\s*\(/.test(nextEl.textContent));
+          if(!alreadyGlossed){ var g = document.createElement('span'); g.className = 'gl'; g.textContent = ' (' + ((m[2] && t[3]) ? t[3] : t[1]) + ')'; frag.appendChild(g); }
+        }
+        last = TRE.lastIndex;
+      }
+      if(last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+      n.parentNode.replaceChild(frag, n);
+    });
+  }
+  var _route = route;
+  route = function(){ _route(); annotate(app); };
+  window.addEventListener('hashchange', route);
+  route();
+})();
+</script>
+
+</body>
+</html>
